@@ -1,0 +1,127 @@
+ [
+  {
+  "name": "Apple",
+  "category": "Fruits",
+  "image": "Apple.jpg"
+  },
+  {
+  "name": "Banana",
+  "category": "Fruits",
+  "image": "Banana.jpg"
+  },
+  {
+  "name": "Banana",
+  "category": "Fruits",
+  "image": "Banana1.jpg"
+  },
+  {
+  "name": "Banana",
+  "category": "Fruits",
+  "image": "Banana2.jpg"
+  },
+  {
+  "name": "Banana",
+  "category": "Fruits",
+  "image": "Banana3.jpg"
+  },
+  {
+  "name": "Cherries",
+  "category": "Fruits",
+  "image": "Cherries.jpg"
+  },
+  {
+  "name": "GreenApple",
+  "category": "Fruits",
+  "image": "GreenApple.jpg"
+  },
+  {
+  "name": "GreenApple1",
+  "category": "Fruits",
+  "image": "GreenApple1.jpg"
+  },
+  {
+  "name": "GreenApple2",
+  "category": "Fruits",
+  "image": "GreenApple2.jpg"
+  },
+  {
+  "name": "Kiwi",
+  "category": "Fruits",
+  "image": "Kiwi.jpg"
+  },
+  {
+  "name": "Lemon",
+  "category": "Fruits",
+  "image": "Lemon.jpg"
+  },
+  {
+  "name": "Mangos",
+  "category": "Fruits",
+  "image": "Mangos.jpg"
+  },
+  {
+  "name": "MixedFruits",
+  "category": "Fruits",
+  "image": "MixedFruits.jpg"
+  },
+  {
+  "name": "Orange",
+  "category": "Fruits",
+  "image": "Orange.jpg"
+  },
+  {
+  "name": "Orange",
+  "category": "Fruits",
+  "image": "Orange1.jpg"
+  },
+  {
+  "name": "Orange",
+  "category": "Fruits",
+  "image": "Orange2.jpg"
+  },
+  {
+  "name": "Papaya",
+  "category": "Fruits",
+  "image": "Papaya.jpg"
+  },
+  {
+  "name": "PineApple",
+  "category": "Fruits",
+  "image": "PineApples.jpg"
+  },
+  {
+  "name": "PineApple",
+  "category": "Fruits",
+  "image": "Pineapples1.jpg"
+  },
+  {
+  "name": "Strawberries",
+  "category": "Fruits",
+  "image": "Strawberries.jpg"
+  },
+  {
+  "name": "Strawberries",
+  "category": "Fruits",
+  "image": "Strawberries1.jpg"
+  },
+  {
+  "name": "Strawberries",
+  "category": "Fruits",
+  "image": "Strawberries3.jpg"
+  },
+  {
+  "name": "Watermelon",
+  "category": "Fruits",
+  "image": "Watermelon.jpg"
+  },
+  {
+  "name": "Watermelon",
+  "category": "Fruits",
+  "image": "Watermelon1.jpg"
+  },
+  {
+  "name": "Watermelon",
+  "category": "Fruits",
+  "image": "Watermelon2.jpg"
+  }
+  ]

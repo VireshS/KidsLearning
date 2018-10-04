@@ -1,0 +1,53 @@
+
+[
+ {
+ "name": "Avacado",
+ "category": "Vegetables",
+ "image": "Avacado.jpg"
+ },
+ {
+ "name": "Beans",
+ "category": "Vegetables",
+ "image": "Beans.jpg"
+ },
+ {
+ "name": "Beet Root",
+ "category": "Vegetables",
+ "image": "Beet Root.jpg"
+ },
+ {
+ "name": "Capsicum",
+ "category": "Vegetables",
+ "image": "Capsicum.jpg"
+ },
+ {
+ "name": "Carrot",
+ "category": "Vegetables",
+ "image": "Carrot1.jpg"
+ },
+ {
+ "name": "Carrots",
+ "category": "Vegetables",
+ "image": "Carrots.jpg"
+ },
+ {
+ "name": "Carrots",
+ "category": "Vegetables",
+ "image": "Carrots1.jpg"
+ },
+ {
+ "name": "Chiili",
+ "category": "Vegetables",
+ "image": "Chiili.jpg"
+ },
+ {
+ "name": "Cucumber",
+ "category": "Vegetables",
+ "image": "Cucumber.jpg"
+ },
+ {
+ "name": "Eggs",
+ "category": "Vegetables",
+ "image": "Eggs.jpg"
+ }
+ ]

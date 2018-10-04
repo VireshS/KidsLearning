@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppMenuCollectionViewCell" id="gTV-IL-0wX" customClass="AppMenuCollectionViewCell" customModule="Just_Have_Fun" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="146"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="146"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FruitsIcon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hxZ-PX-Csx">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="146"/>
+                    </imageView>
+                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSR-Bd-CBK">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="146"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fj-UD-TEl">
+                        <rect key="frame" x="0.0" y="106" width="250" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="qbf-un-xKk"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="q1F-l2-GZS">
+                        <rect key="frame" x="5" y="109" width="240" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="yAB-lG-OXA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <size key="shadowOffset" width="1" height="0.0"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sSR-Bd-CBK" secondAttribute="bottom" id="1P0-af-vNT"/>
+                <constraint firstAttribute="trailing" secondItem="hxZ-PX-Csx" secondAttribute="trailing" id="5kl-CI-m5L"/>
+                <constraint firstItem="q1F-l2-GZS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="7GM-Do-ByY"/>
+                <constraint firstItem="sSR-Bd-CBK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9hg-iK-gMJ"/>
+                <constraint firstItem="hxZ-PX-Csx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CUr-ID-CKz"/>
+                <constraint firstAttribute="trailing" secondItem="8fj-UD-TEl" secondAttribute="trailing" id="Uba-ea-xgy"/>
+                <constraint firstAttribute="trailing" secondItem="q1F-l2-GZS" secondAttribute="trailing" constant="5" id="Wog-7n-fOy"/>
+                <constraint firstItem="hxZ-PX-Csx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bZG-j2-ZON"/>
+                <constraint firstAttribute="bottom" secondItem="8fj-UD-TEl" secondAttribute="bottom" id="ble-mA-iME"/>
+                <constraint firstItem="sSR-Bd-CBK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hSq-tZ-j0D"/>
+                <constraint firstAttribute="bottom" secondItem="hxZ-PX-Csx" secondAttribute="bottom" id="iwP-Fw-lds"/>
+                <constraint firstItem="8fj-UD-TEl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nTg-a0-ZqS"/>
+                <constraint firstAttribute="bottom" secondItem="q1F-l2-GZS" secondAttribute="bottom" constant="3" id="wCv-XZ-KFg"/>
+                <constraint firstAttribute="trailing" secondItem="sSR-Bd-CBK" secondAttribute="trailing" id="xpX-ta-fwc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="blurView" destination="sSR-Bd-CBK" id="yim-nU-k6A"/>
+                <outlet property="imageView" destination="hxZ-PX-Csx" id="Btz-RX-Y5r"/>
+                <outlet property="menuLabel" destination="q1F-l2-GZS" id="jMO-9u-Iy2"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="FruitsIcon.jpg" width="2873" height="1816"/>
+    </resources>
+</document>

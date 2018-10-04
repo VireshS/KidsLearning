@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE51BED521648E4400888662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51BED421648E4400888662 /* AppDelegate.swift */; };
+		AE51BED721648E4400888662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51BED621648E4400888662 /* ViewController.swift */; };
+		AE51BEDA21648E4400888662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE51BED821648E4400888662 /* Main.storyboard */; };
+		AE51BEDC21648E4400888662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE51BEDB21648E4400888662 /* Assets.xcassets */; };
+		AE51BEDF21648E4400888662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE51BEDD21648E4400888662 /* LaunchScreen.storyboard */; };
+		AEA6BA842164997D004BDC39 /* PhotosBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BA832164997D004BDC39 /* PhotosBrowserViewController.swift */; };
+		AEA6BA8621649C01004BDC39 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BA8521649C01004BDC39 /* Extensions.swift */; };
+		AEA6BA8921649D4F004BDC39 /* AppMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BA8721649D4F004BDC39 /* AppMenuCollectionViewCell.swift */; };
+		AEA6BA8A21649D4F004BDC39 /* AppMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BA8821649D4F004BDC39 /* AppMenuCollectionViewCell.xib */; };
+		AEA6BA8D2164A7B2004BDC39 /* LearningEntityBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BA8C2164A7B2004BDC39 /* LearningEntityBrowserViewController.swift */; };
+		AEA6BA952164D7A8004BDC39 /* ColorsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BA942164D7A8004BDC39 /* ColorsDirectory.swift */; };
+		AEA6BA9B2164DE1F004BDC39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA6BA9A2164DE1F004BDC39 /* AVFoundation.framework */; };
+		AEA6BAA221652E26004BDC39 /* VegsIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BA9D21652E26004BDC39 /* VegsIcon.jpg */; };
+		AEA6BAA321652E26004BDC39 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BA9E21652E26004BDC39 /* lock.png */; };
+		AEA6BAA421652E26004BDC39 /* colorsIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BA9F21652E26004BDC39 /* colorsIcon.jpg */; };
+		AEA6BAA521652E26004BDC39 /* FruitsIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BAA021652E26004BDC39 /* FruitsIcon.jpg */; };
+		AEA6BAA621652E26004BDC39 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BAA121652E26004BDC39 /* unlock.png */; };
+		AEA6BAA921652E64004BDC39 /* AppMenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BAA821652E64004BDC39 /* AppMenuItems.swift */; };
+		AEA6BB072165352F004BDC39 /* LearningEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BB062165352F004BDC39 /* LearningEntity.swift */; };
+		AEA6BB2521653BF5004BDC39 /* Papaya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB0B21653BF5004BDC39 /* Papaya.jpg */; };
+		AEA6BB2621653BF5004BDC39 /* Mangos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB0C21653BF5004BDC39 /* Mangos.jpg */; };
+		AEA6BB2721653BF5004BDC39 /* Banana1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB0D21653BF5004BDC39 /* Banana1.jpg */; };
+		AEA6BB2821653BF5004BDC39 /* Banana3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB0E21653BF5004BDC39 /* Banana3.jpg */; };
+		AEA6BB2921653BF5004BDC39 /* Banana2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB0F21653BF5004BDC39 /* Banana2.jpg */; };
+		AEA6BB2A21653BF5004BDC39 /* MixedFruits.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1021653BF5004BDC39 /* MixedFruits.jpg */; };
+		AEA6BB2B21653BF5004BDC39 /* GreenApple1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1121653BF5004BDC39 /* GreenApple1.jpg */; };
+		AEA6BB2C21653BF5004BDC39 /* GreenApple2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1221653BF5004BDC39 /* GreenApple2.jpg */; };
+		AEA6BB2D21653BF5004BDC39 /* Orange1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1321653BF5004BDC39 /* Orange1.jpg */; };
+		AEA6BB2E21653BF5004BDC39 /* Orange2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1421653BF5004BDC39 /* Orange2.jpg */; };
+		AEA6BB2F21653BF5004BDC39 /* Watermelon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1521653BF5004BDC39 /* Watermelon1.jpg */; };
+		AEA6BB3021653BF5004BDC39 /* Watermelon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1621653BF5004BDC39 /* Watermelon.jpg */; };
+		AEA6BB3121653BF5004BDC39 /* Cherries.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1721653BF5004BDC39 /* Cherries.jpg */; };
+		AEA6BB3221653BF5004BDC39 /* Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1821653BF5004BDC39 /* Orange.jpg */; };
+		AEA6BB3321653BF5004BDC39 /* Strawberries1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1921653BF5004BDC39 /* Strawberries1.jpg */; };
+		AEA6BB3421653BF5004BDC39 /* Apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1A21653BF5004BDC39 /* Apple.jpg */; };
+		AEA6BB3521653BF5004BDC39 /* Watermelon2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1B21653BF5004BDC39 /* Watermelon2.jpg */; };
+		AEA6BB3621653BF5004BDC39 /* Strawberries3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1C21653BF5004BDC39 /* Strawberries3.jpg */; };
+		AEA6BB3821653BF5004BDC39 /* Strawberries.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1E21653BF5004BDC39 /* Strawberries.jpg */; };
+		AEA6BB3921653BF5004BDC39 /* Banana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB1F21653BF5004BDC39 /* Banana.jpg */; };
+		AEA6BB3A21653BF5004BDC39 /* Lemon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB2021653BF5004BDC39 /* Lemon.jpg */; };
+		AEA6BB3B21653BF5004BDC39 /* PineApples.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB2121653BF5004BDC39 /* PineApples.jpg */; };
+		AEA6BB3C21653BF5004BDC39 /* GreenApple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB2221653BF5004BDC39 /* GreenApple.jpg */; };
+		AEA6BB3D21653BF5004BDC39 /* Pineapples1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB2321653BF5004BDC39 /* Pineapples1.jpg */; };
+		AEA6BB3E21653BF5004BDC39 /* Kiwi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB2421653BF5004BDC39 /* Kiwi.jpg */; };
+		AEA6BB482165CC90004BDC39 /* AllFruits.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB452165CC90004BDC39 /* AllFruits.json */; };
+		AEA6BB492165CC90004BDC39 /* AllColors.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB462165CC90004BDC39 /* AllColors.json */; };
+		AEA6BB502165CCBA004BDC39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BB4D2165CCB9004BDC39 /* DataLoader.swift */; };
+		AEA6BB512165CCBA004BDC39 /* SpeechEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6BB4F2165CCB9004BDC39 /* SpeechEngine.swift */; };
+		AEA6BB532165CE16004BDC39 /* AllVegetables.json in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB522165CE16004BDC39 /* AllVegetables.json */; };
+		AEA6BB652165CE7B004BDC39 /* Carrots.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB552165CE7A004BDC39 /* Carrots.jpg */; };
+		AEA6BB662165CE7B004BDC39 /* Beans.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB562165CE7A004BDC39 /* Beans.jpg */; };
+		AEA6BB672165CE7B004BDC39 /* Spinach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB572165CE7A004BDC39 /* Spinach.jpg */; };
+		AEA6BB682165CE7B004BDC39 /* Garlic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB582165CE7B004BDC39 /* Garlic.jpg */; };
+		AEA6BB692165CE7B004BDC39 /* Tomato.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB592165CE7B004BDC39 /* Tomato.jpg */; };
+		AEA6BB6A2165CE7B004BDC39 /* Chiili.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB5A2165CE7B004BDC39 /* Chiili.jpg */; };
+		AEA6BB6B2165CE7B004BDC39 /* Avacado.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB5B2165CE7B004BDC39 /* Avacado.jpg */; };
+		AEA6BB6C2165CE7B004BDC39 /* Carrot1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB5C2165CE7B004BDC39 /* Carrot1.jpg */; };
+		AEA6BB6D2165CE7B004BDC39 /* Salad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB5D2165CE7B004BDC39 /* Salad.jpg */; };
+		AEA6BB6E2165CE7B004BDC39 /* Eggs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB5E2165CE7B004BDC39 /* Eggs.jpg */; };
+		AEA6BB6F2165CE7B004BDC39 /* Cucumber.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB5F2165CE7B004BDC39 /* Cucumber.jpg */; };
+		AEA6BB702165CE7B004BDC39 /* Carrots1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB602165CE7B004BDC39 /* Carrots1.jpg */; };
+		AEA6BB712165CE7B004BDC39 /* Capsicum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB612165CE7B004BDC39 /* Capsicum.jpg */; };
+		AEA6BB722165CE7B004BDC39 /* Lemons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB622165CE7B004BDC39 /* Lemons.jpg */; };
+		AEA6BB732165CE7B004BDC39 /* Beet Root.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEA6BB632165CE7B004BDC39 /* Beet Root.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE51BED121648E4400888662 /* Just Have Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Have Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE51BED421648E4400888662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE51BED621648E4400888662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE51BED921648E4400888662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE51BEDB21648E4400888662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE51BEDE21648E4400888662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE51BEE021648E4400888662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEA6BA832164997D004BDC39 /* PhotosBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosBrowserViewController.swift; sourceTree = "<group>"; };
+		AEA6BA8521649C01004BDC39 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AEA6BA8721649D4F004BDC39 /* AppMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		AEA6BA8821649D4F004BDC39 /* AppMenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppMenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		AEA6BA8C2164A7B2004BDC39 /* LearningEntityBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningEntityBrowserViewController.swift; sourceTree = "<group>"; };
+		AEA6BA942164D7A8004BDC39 /* ColorsDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsDirectory.swift; sourceTree = "<group>"; };
+		AEA6BA9A2164DE1F004BDC39 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AEA6BA9D21652E26004BDC39 /* VegsIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VegsIcon.jpg; sourceTree = "<group>"; };
+		AEA6BA9E21652E26004BDC39 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		AEA6BA9F21652E26004BDC39 /* colorsIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = colorsIcon.jpg; sourceTree = "<group>"; };
+		AEA6BAA021652E26004BDC39 /* FruitsIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FruitsIcon.jpg; sourceTree = "<group>"; };
+		AEA6BAA121652E26004BDC39 /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
+		AEA6BAA821652E64004BDC39 /* AppMenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuItems.swift; sourceTree = "<group>"; };
+		AEA6BB062165352F004BDC39 /* LearningEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningEntity.swift; sourceTree = "<group>"; };
+		AEA6BB0B21653BF5004BDC39 /* Papaya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Papaya.jpg; sourceTree = "<group>"; };
+		AEA6BB0C21653BF5004BDC39 /* Mangos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mangos.jpg; sourceTree = "<group>"; };
+		AEA6BB0D21653BF5004BDC39 /* Banana1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Banana1.jpg; sourceTree = "<group>"; };
+		AEA6BB0E21653BF5004BDC39 /* Banana3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Banana3.jpg; sourceTree = "<group>"; };
+		AEA6BB0F21653BF5004BDC39 /* Banana2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Banana2.jpg; sourceTree = "<group>"; };
+		AEA6BB1021653BF5004BDC39 /* MixedFruits.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MixedFruits.jpg; sourceTree = "<group>"; };
+		AEA6BB1121653BF5004BDC39 /* GreenApple1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GreenApple1.jpg; sourceTree = "<group>"; };
+		AEA6BB1221653BF5004BDC39 /* GreenApple2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GreenApple2.jpg; sourceTree = "<group>"; };
+		AEA6BB1321653BF5004BDC39 /* Orange1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Orange1.jpg; sourceTree = "<group>"; };
+		AEA6BB1421653BF5004BDC39 /* Orange2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Orange2.jpg; sourceTree = "<group>"; };
+		AEA6BB1521653BF5004BDC39 /* Watermelon1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Watermelon1.jpg; sourceTree = "<group>"; };
+		AEA6BB1621653BF5004BDC39 /* Watermelon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Watermelon.jpg; sourceTree = "<group>"; };
+		AEA6BB1721653BF5004BDC39 /* Cherries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cherries.jpg; sourceTree = "<group>"; };
+		AEA6BB1821653BF5004BDC39 /* Orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Orange.jpg; sourceTree = "<group>"; };
+		AEA6BB1921653BF5004BDC39 /* Strawberries1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Strawberries1.jpg; sourceTree = "<group>"; };
+		AEA6BB1A21653BF5004BDC39 /* Apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Apple.jpg; sourceTree = "<group>"; };
+		AEA6BB1B21653BF5004BDC39 /* Watermelon2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Watermelon2.jpg; sourceTree = "<group>"; };
+		AEA6BB1C21653BF5004BDC39 /* Strawberries3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Strawberries3.jpg; sourceTree = "<group>"; };
+		AEA6BB1E21653BF5004BDC39 /* Strawberries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Strawberries.jpg; sourceTree = "<group>"; };
+		AEA6BB1F21653BF5004BDC39 /* Banana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Banana.jpg; sourceTree = "<group>"; };
+		AEA6BB2021653BF5004BDC39 /* Lemon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lemon.jpg; sourceTree = "<group>"; };
+		AEA6BB2121653BF5004BDC39 /* PineApples.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PineApples.jpg; sourceTree = "<group>"; };
+		AEA6BB2221653BF5004BDC39 /* GreenApple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GreenApple.jpg; sourceTree = "<group>"; };
+		AEA6BB2321653BF5004BDC39 /* Pineapples1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pineapples1.jpg; sourceTree = "<group>"; };
+		AEA6BB2421653BF5004BDC39 /* Kiwi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kiwi.jpg; sourceTree = "<group>"; };
+		AEA6BB452165CC90004BDC39 /* AllFruits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllFruits.json; sourceTree = "<group>"; };
+		AEA6BB462165CC90004BDC39 /* AllColors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllColors.json; sourceTree = "<group>"; };
+		AEA6BB4D2165CCB9004BDC39 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		AEA6BB4F2165CCB9004BDC39 /* SpeechEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechEngine.swift; sourceTree = "<group>"; };
+		AEA6BB522165CE16004BDC39 /* AllVegetables.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllVegetables.json; sourceTree = "<group>"; };
+		AEA6BB552165CE7A004BDC39 /* Carrots.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Carrots.jpg; sourceTree = "<group>"; };
+		AEA6BB562165CE7A004BDC39 /* Beans.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beans.jpg; sourceTree = "<group>"; };
+		AEA6BB572165CE7A004BDC39 /* Spinach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spinach.jpg; sourceTree = "<group>"; };
+		AEA6BB582165CE7B004BDC39 /* Garlic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Garlic.jpg; sourceTree = "<group>"; };
+		AEA6BB592165CE7B004BDC39 /* Tomato.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tomato.jpg; sourceTree = "<group>"; };
+		AEA6BB5A2165CE7B004BDC39 /* Chiili.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Chiili.jpg; sourceTree = "<group>"; };
+		AEA6BB5B2165CE7B004BDC39 /* Avacado.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Avacado.jpg; sourceTree = "<group>"; };
+		AEA6BB5C2165CE7B004BDC39 /* Carrot1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Carrot1.jpg; sourceTree = "<group>"; };
+		AEA6BB5D2165CE7B004BDC39 /* Salad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Salad.jpg; sourceTree = "<group>"; };
+		AEA6BB5E2165CE7B004BDC39 /* Eggs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Eggs.jpg; sourceTree = "<group>"; };
+		AEA6BB5F2165CE7B004BDC39 /* Cucumber.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cucumber.jpg; sourceTree = "<group>"; };
+		AEA6BB602165CE7B004BDC39 /* Carrots1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Carrots1.jpg; sourceTree = "<group>"; };
+		AEA6BB612165CE7B004BDC39 /* Capsicum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Capsicum.jpg; sourceTree = "<group>"; };
+		AEA6BB622165CE7B004BDC39 /* Lemons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lemons.jpg; sourceTree = "<group>"; };
+		AEA6BB632165CE7B004BDC39 /* Beet Root.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Beet Root.jpg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE51BECE21648E4400888662 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEA6BA9B2164DE1F004BDC39 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE51BEC821648E4400888662 = {
+			isa = PBXGroup;
+			children = (
+				AEA6BA8521649C01004BDC39 /* Extensions.swift */,
+				AE51BED321648E4400888662 /* Just Have Fun */,
+				AE51BED221648E4400888662 /* Products */,
+				AEA6BA992164DE1E004BDC39 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AE51BED221648E4400888662 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE51BED121648E4400888662 /* Just Have Fun.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE51BED321648E4400888662 /* Just Have Fun */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB4B2165CCB9004BDC39 /* Services */,
+				AEA6BAA721652E48004BDC39 /* Models */,
+				AEA6BA8E2164B7A9004BDC39 /* Resources */,
+				AEA6BA8B2164A7B2004BDC39 /* ColorsBrowser */,
+				AEA6BA8221649969004BDC39 /* PhotosBrowser */,
+				AE51BED421648E4400888662 /* AppDelegate.swift */,
+				AE51BED621648E4400888662 /* ViewController.swift */,
+				AE51BED821648E4400888662 /* Main.storyboard */,
+				AE51BEDB21648E4400888662 /* Assets.xcassets */,
+				AE51BEDD21648E4400888662 /* LaunchScreen.storyboard */,
+				AE51BEE021648E4400888662 /* Info.plist */,
+				AEA6BA8721649D4F004BDC39 /* AppMenuCollectionViewCell.swift */,
+				AEA6BA8821649D4F004BDC39 /* AppMenuCollectionViewCell.xib */,
+			);
+			path = "Just Have Fun";
+			sourceTree = "<group>";
+		};
+		AEA6BA8221649969004BDC39 /* PhotosBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BA832164997D004BDC39 /* PhotosBrowserViewController.swift */,
+			);
+			path = PhotosBrowser;
+			sourceTree = "<group>";
+		};
+		AEA6BA8B2164A7B2004BDC39 /* ColorsBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BA8C2164A7B2004BDC39 /* LearningEntityBrowserViewController.swift */,
+			);
+			path = ColorsBrowser;
+			sourceTree = "<group>";
+		};
+		AEA6BA8E2164B7A9004BDC39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB0A21653BF5004BDC39 /* Fruits */,
+				AEA6BAAA2165349A004BDC39 /* Vegetables */,
+				AEA6BA9C21652E26004BDC39 /* Icons */,
+				AEA6BA932164D7A8004BDC39 /* Extensions */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AEA6BA932164D7A8004BDC39 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BA942164D7A8004BDC39 /* ColorsDirectory.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEA6BA992164DE1E004BDC39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BA9A2164DE1F004BDC39 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEA6BA9C21652E26004BDC39 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BA9D21652E26004BDC39 /* VegsIcon.jpg */,
+				AEA6BA9E21652E26004BDC39 /* lock.png */,
+				AEA6BA9F21652E26004BDC39 /* colorsIcon.jpg */,
+				AEA6BAA021652E26004BDC39 /* FruitsIcon.jpg */,
+				AEA6BAA121652E26004BDC39 /* unlock.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		AEA6BAA721652E48004BDC39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB442165CC90004BDC39 /* Json */,
+				AEA6BAA821652E64004BDC39 /* AppMenuItems.swift */,
+				AEA6BB062165352F004BDC39 /* LearningEntity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AEA6BAAA2165349A004BDC39 /* Vegetables */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB5B2165CE7B004BDC39 /* Avacado.jpg */,
+				AEA6BB562165CE7A004BDC39 /* Beans.jpg */,
+				AEA6BB632165CE7B004BDC39 /* Beet Root.jpg */,
+				AEA6BB612165CE7B004BDC39 /* Capsicum.jpg */,
+				AEA6BB5C2165CE7B004BDC39 /* Carrot1.jpg */,
+				AEA6BB552165CE7A004BDC39 /* Carrots.jpg */,
+				AEA6BB602165CE7B004BDC39 /* Carrots1.jpg */,
+				AEA6BB5A2165CE7B004BDC39 /* Chiili.jpg */,
+				AEA6BB5F2165CE7B004BDC39 /* Cucumber.jpg */,
+				AEA6BB5E2165CE7B004BDC39 /* Eggs.jpg */,
+				AEA6BB582165CE7B004BDC39 /* Garlic.jpg */,
+				AEA6BB622165CE7B004BDC39 /* Lemons.jpg */,
+				AEA6BB5D2165CE7B004BDC39 /* Salad.jpg */,
+				AEA6BB572165CE7A004BDC39 /* Spinach.jpg */,
+				AEA6BB592165CE7B004BDC39 /* Tomato.jpg */,
+			);
+			path = Vegetables;
+			sourceTree = "<group>";
+		};
+		AEA6BB0A21653BF5004BDC39 /* Fruits */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB0B21653BF5004BDC39 /* Papaya.jpg */,
+				AEA6BB0C21653BF5004BDC39 /* Mangos.jpg */,
+				AEA6BB0D21653BF5004BDC39 /* Banana1.jpg */,
+				AEA6BB0E21653BF5004BDC39 /* Banana3.jpg */,
+				AEA6BB0F21653BF5004BDC39 /* Banana2.jpg */,
+				AEA6BB1021653BF5004BDC39 /* MixedFruits.jpg */,
+				AEA6BB1121653BF5004BDC39 /* GreenApple1.jpg */,
+				AEA6BB1221653BF5004BDC39 /* GreenApple2.jpg */,
+				AEA6BB1321653BF5004BDC39 /* Orange1.jpg */,
+				AEA6BB1421653BF5004BDC39 /* Orange2.jpg */,
+				AEA6BB1521653BF5004BDC39 /* Watermelon1.jpg */,
+				AEA6BB1621653BF5004BDC39 /* Watermelon.jpg */,
+				AEA6BB1721653BF5004BDC39 /* Cherries.jpg */,
+				AEA6BB1821653BF5004BDC39 /* Orange.jpg */,
+				AEA6BB1921653BF5004BDC39 /* Strawberries1.jpg */,
+				AEA6BB1A21653BF5004BDC39 /* Apple.jpg */,
+				AEA6BB1B21653BF5004BDC39 /* Watermelon2.jpg */,
+				AEA6BB1C21653BF5004BDC39 /* Strawberries3.jpg */,
+				AEA6BB1E21653BF5004BDC39 /* Strawberries.jpg */,
+				AEA6BB1F21653BF5004BDC39 /* Banana.jpg */,
+				AEA6BB2021653BF5004BDC39 /* Lemon.jpg */,
+				AEA6BB2121653BF5004BDC39 /* PineApples.jpg */,
+				AEA6BB2221653BF5004BDC39 /* GreenApple.jpg */,
+				AEA6BB2321653BF5004BDC39 /* Pineapples1.jpg */,
+				AEA6BB2421653BF5004BDC39 /* Kiwi.jpg */,
+			);
+			path = Fruits;
+			sourceTree = "<group>";
+		};
+		AEA6BB442165CC90004BDC39 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB522165CE16004BDC39 /* AllVegetables.json */,
+				AEA6BB452165CC90004BDC39 /* AllFruits.json */,
+				AEA6BB462165CC90004BDC39 /* AllColors.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		AEA6BB4B2165CCB9004BDC39 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB4C2165CCB9004BDC39 /* DataService */,
+				AEA6BB4E2165CCB9004BDC39 /* SpeechEngine */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AEA6BB4C2165CCB9004BDC39 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB4D2165CCB9004BDC39 /* DataLoader.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		AEA6BB4E2165CCB9004BDC39 /* SpeechEngine */ = {
+			isa = PBXGroup;
+			children = (
+				AEA6BB4F2165CCB9004BDC39 /* SpeechEngine.swift */,
+			);
+			path = SpeechEngine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE51BED021648E4400888662 /* Just Have Fun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE51BEE321648E4400888662 /* Build configuration list for PBXNativeTarget "Just Have Fun" */;
+			buildPhases = (
+				AE51BECD21648E4400888662 /* Sources */,
+				AE51BECE21648E4400888662 /* Frameworks */,
+				AE51BECF21648E4400888662 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Just Have Fun";
+			productName = "Just Have Fun";
+			productReference = AE51BED121648E4400888662 /* Just Have Fun.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE51BEC921648E4400888662 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Honeywell;
+				TargetAttributes = {
+					AE51BED021648E4400888662 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = AE51BECC21648E4400888662 /* Build configuration list for PBXProject "Just Have Fun" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE51BEC821648E4400888662;
+			productRefGroup = AE51BED221648E4400888662 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE51BED021648E4400888662 /* Just Have Fun */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE51BECF21648E4400888662 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE51BEDF21648E4400888662 /* LaunchScreen.storyboard in Resources */,
+				AEA6BB2D21653BF5004BDC39 /* Orange1.jpg in Resources */,
+				AEA6BB3321653BF5004BDC39 /* Strawberries1.jpg in Resources */,
+				AEA6BB732165CE7B004BDC39 /* Beet Root.jpg in Resources */,
+				AEA6BAA221652E26004BDC39 /* VegsIcon.jpg in Resources */,
+				AEA6BB692165CE7B004BDC39 /* Tomato.jpg in Resources */,
+				AEA6BB2C21653BF5004BDC39 /* GreenApple2.jpg in Resources */,
+				AEA6BB3E21653BF5004BDC39 /* Kiwi.jpg in Resources */,
+				AEA6BB3C21653BF5004BDC39 /* GreenApple.jpg in Resources */,
+				AEA6BB2821653BF5004BDC39 /* Banana3.jpg in Resources */,
+				AEA6BB482165CC90004BDC39 /* AllFruits.json in Resources */,
+				AEA6BB3A21653BF5004BDC39 /* Lemon.jpg in Resources */,
+				AEA6BB712165CE7B004BDC39 /* Capsicum.jpg in Resources */,
+				AEA6BB2E21653BF5004BDC39 /* Orange2.jpg in Resources */,
+				AEA6BB2F21653BF5004BDC39 /* Watermelon1.jpg in Resources */,
+				AEA6BB3021653BF5004BDC39 /* Watermelon.jpg in Resources */,
+				AEA6BB492165CC90004BDC39 /* AllColors.json in Resources */,
+				AEA6BB702165CE7B004BDC39 /* Carrots1.jpg in Resources */,
+				AEA6BAA421652E26004BDC39 /* colorsIcon.jpg in Resources */,
+				AEA6BB532165CE16004BDC39 /* AllVegetables.json in Resources */,
+				AEA6BB3621653BF5004BDC39 /* Strawberries3.jpg in Resources */,
+				AEA6BB3121653BF5004BDC39 /* Cherries.jpg in Resources */,
+				AEA6BB3D21653BF5004BDC39 /* Pineapples1.jpg in Resources */,
+				AEA6BB2A21653BF5004BDC39 /* MixedFruits.jpg in Resources */,
+				AEA6BB6E2165CE7B004BDC39 /* Eggs.jpg in Resources */,
+				AEA6BAA621652E26004BDC39 /* unlock.png in Resources */,
+				AEA6BB2B21653BF5004BDC39 /* GreenApple1.jpg in Resources */,
+				AEA6BB2721653BF5004BDC39 /* Banana1.jpg in Resources */,
+				AEA6BB662165CE7B004BDC39 /* Beans.jpg in Resources */,
+				AEA6BB2921653BF5004BDC39 /* Banana2.jpg in Resources */,
+				AEA6BAA521652E26004BDC39 /* FruitsIcon.jpg in Resources */,
+				AEA6BB6A2165CE7B004BDC39 /* Chiili.jpg in Resources */,
+				AEA6BB3921653BF5004BDC39 /* Banana.jpg in Resources */,
+				AEA6BB6B2165CE7B004BDC39 /* Avacado.jpg in Resources */,
+				AEA6BAA321652E26004BDC39 /* lock.png in Resources */,
+				AEA6BB2521653BF5004BDC39 /* Papaya.jpg in Resources */,
+				AEA6BB682165CE7B004BDC39 /* Garlic.jpg in Resources */,
+				AEA6BB3221653BF5004BDC39 /* Orange.jpg in Resources */,
+				AE51BEDC21648E4400888662 /* Assets.xcassets in Resources */,
+				AEA6BB652165CE7B004BDC39 /* Carrots.jpg in Resources */,
+				AEA6BB3821653BF5004BDC39 /* Strawberries.jpg in Resources */,
+				AEA6BB722165CE7B004BDC39 /* Lemons.jpg in Resources */,
+				AEA6BB3521653BF5004BDC39 /* Watermelon2.jpg in Resources */,
+				AE51BEDA21648E4400888662 /* Main.storyboard in Resources */,
+				AEA6BA8A21649D4F004BDC39 /* AppMenuCollectionViewCell.xib in Resources */,
+				AEA6BB6C2165CE7B004BDC39 /* Carrot1.jpg in Resources */,
+				AEA6BB2621653BF5004BDC39 /* Mangos.jpg in Resources */,
+				AEA6BB3421653BF5004BDC39 /* Apple.jpg in Resources */,
+				AEA6BB6D2165CE7B004BDC39 /* Salad.jpg in Resources */,
+				AEA6BB672165CE7B004BDC39 /* Spinach.jpg in Resources */,
+				AEA6BB3B21653BF5004BDC39 /* PineApples.jpg in Resources */,
+				AEA6BB6F2165CE7B004BDC39 /* Cucumber.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE51BECD21648E4400888662 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEA6BA8921649D4F004BDC39 /* AppMenuCollectionViewCell.swift in Sources */,
+				AEA6BA8D2164A7B2004BDC39 /* LearningEntityBrowserViewController.swift in Sources */,
+				AEA6BA842164997D004BDC39 /* PhotosBrowserViewController.swift in Sources */,
+				AEA6BAA921652E64004BDC39 /* AppMenuItems.swift in Sources */,
+				AEA6BB072165352F004BDC39 /* LearningEntity.swift in Sources */,
+				AE51BED721648E4400888662 /* ViewController.swift in Sources */,
+				AEA6BA952164D7A8004BDC39 /* ColorsDirectory.swift in Sources */,
+				AEA6BB502165CCBA004BDC39 /* DataLoader.swift in Sources */,
+				AE51BED521648E4400888662 /* AppDelegate.swift in Sources */,
+				AEA6BB512165CCBA004BDC39 /* SpeechEngine.swift in Sources */,
+				AEA6BA8621649C01004BDC39 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AE51BED821648E4400888662 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE51BED921648E4400888662 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AE51BEDD21648E4400888662 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE51BEDE21648E4400888662 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE51BEE121648E4400888662 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE51BEE221648E4400888662 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE51BEE421648E4400888662 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QF3Y3JH9KE;
+				INFOPLIST_FILE = "Just Have Fun/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honeywell.Just-Have-Fun";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AE51BEE521648E4400888662 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QF3Y3JH9KE;
+				INFOPLIST_FILE = "Just Have Fun/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honeywell.Just-Have-Fun";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE51BECC21648E4400888662 /* Build configuration list for PBXProject "Just Have Fun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE51BEE121648E4400888662 /* Debug */,
+				AE51BEE221648E4400888662 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE51BEE321648E4400888662 /* Build configuration list for PBXNativeTarget "Just Have Fun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE51BEE421648E4400888662 /* Debug */,
+				AE51BEE521648E4400888662 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE51BEC921648E4400888662 /* Project object */;
+}
