@@ -1,0 +1,53 @@
+
+[
+ {
+ "name": "Red",
+ "category": "Colors",
+ "color": "e84118"
+ },
+ {
+ "name": "Yellow",
+ "category": "Colors",
+ "color": "fbc531"
+ },
+ {
+ "name": "Purple",
+ "category": "Colors",
+ "color": "5f27cd"
+ },
+ {
+ "name": "Pink",
+ "category": "Colors",
+ "color": "f368e0"
+ },
+ {
+ "name": "Grey",
+ "category": "Colors",
+ "color": "2f3542"
+ },
+ {
+ "name": "Orange",
+ "category": "Colors",
+ "color": "ffa502"
+ },
+ {
+ "name": "Blue",
+ "category": "Colors",
+ "color": "3742fa"
+ },
+ {
+ "name": "Black",
+ "category": "Colors",
+ "color": "000000"
+ },
+ {
+ "name": "White",
+ "category": "Colors",
+ "color": "ffffff"
+ },
+ {
+ "name": "Green",
+ "category": "Colors",
+ "color": "006600"
+ }
+ ]

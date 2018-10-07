@@ -51,12 +51,28 @@
                                                     <action selector="onLockToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5oW-3y-evf"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-rZ-Kbc">
+                                                <rect key="frame" x="16" y="15" width="117" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="117" id="WhF-Pd-yTC"/>
+                                                    <constraint firstAttribute="height" constant="50" id="diL-el-eIV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" title="Settings"/>
+                                                <connections>
+                                                    <action selector="onSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WZh-0s-guy"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.8784313725490196" green="0.36078431372549019" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="vUQ-TJ-vwd" secondAttribute="trailing" constant="30" id="13E-j4-8rJ"/>
                                             <constraint firstItem="vUQ-TJ-vwd" firstAttribute="leading" secondItem="J6Q-JM-tlo" secondAttribute="leading" constant="30" id="3bZ-yB-vEt"/>
                                             <constraint firstAttribute="bottom" secondItem="vUQ-TJ-vwd" secondAttribute="bottom" constant="5" id="609-It-JZA"/>
+                                            <constraint firstItem="GFO-rZ-Kbc" firstAttribute="leading" secondItem="J6Q-JM-tlo" secondAttribute="leading" constant="16" id="Elh-ge-JEa"/>
+                                            <constraint firstItem="GFO-rZ-Kbc" firstAttribute="top" secondItem="J6Q-JM-tlo" secondAttribute="top" constant="15" id="iXS-ht-C4d"/>
                                             <constraint firstAttribute="trailing" secondItem="aFk-Pz-o2N" secondAttribute="trailing" constant="20" id="mh3-y1-oew"/>
                                             <constraint firstAttribute="bottom" secondItem="aFk-Pz-o2N" secondAttribute="bottom" id="xtE-xs-S7y"/>
                                         </constraints>
@@ -270,6 +286,53 @@
             </objects>
             <point key="canvasLocation" x="777.51798561151077" y="31.654676258992808"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="KLj-Ie-nmr">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="3Il-RQ-fcb" customClass="SettingsViewController" customModule="Just_Have_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yjf-Ry-0eP">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3Qg-SI-zXR">
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="UPp-gR-2nR"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gr1-vC-ZuU">
+                                <rect key="frame" x="0.0" y="150" width="1112" height="624"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTm-bv-sc3">
+                                <rect key="frame" x="0.0" y="774" width="1112" height="60"/>
+                                <color key="backgroundColor" red="0.88028282849999995" green="0.36239748640000002" blue="0.37063912459999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LL4-f8-akG"/>
+                                </constraints>
+                                <state key="normal" title="DONE"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RTm-bv-sc3" firstAttribute="trailing" secondItem="Gi6-oh-BkO" secondAttribute="trailing" id="5b9-9j-cW4"/>
+                            <constraint firstItem="3Qg-SI-zXR" firstAttribute="trailing" secondItem="Gi6-oh-BkO" secondAttribute="trailing" id="Gx8-Gc-Usb"/>
+                            <constraint firstItem="3Qg-SI-zXR" firstAttribute="top" secondItem="Yjf-Ry-0eP" secondAttribute="top" id="Oht-52-zM6"/>
+                            <constraint firstItem="Gr1-vC-ZuU" firstAttribute="trailing" secondItem="Gi6-oh-BkO" secondAttribute="trailing" id="Qnv-gt-SGX"/>
+                            <constraint firstItem="3Qg-SI-zXR" firstAttribute="leading" secondItem="Gi6-oh-BkO" secondAttribute="leading" id="cEN-8e-0Xc"/>
+                            <constraint firstItem="Gr1-vC-ZuU" firstAttribute="top" secondItem="3Qg-SI-zXR" secondAttribute="bottom" id="coi-Kk-b6Q"/>
+                            <constraint firstItem="RTm-bv-sc3" firstAttribute="bottom" secondItem="Gi6-oh-BkO" secondAttribute="bottom" id="cqv-Ru-c2c"/>
+                            <constraint firstItem="RTm-bv-sc3" firstAttribute="top" secondItem="Gr1-vC-ZuU" secondAttribute="bottom" id="pcV-8f-tma"/>
+                            <constraint firstItem="Gr1-vC-ZuU" firstAttribute="leading" secondItem="Gi6-oh-BkO" secondAttribute="leading" id="q9u-uQ-DFg"/>
+                            <constraint firstItem="RTm-bv-sc3" firstAttribute="leading" secondItem="Gi6-oh-BkO" secondAttribute="leading" id="sn2-kI-Bvo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gi6-oh-BkO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jVK-r9-Ihy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696.58273381294964" y="709.3525179856116"/>
+        </scene>
         <!--Colors Browser View Controller-->
         <scene sceneID="dKC-BP-Vbk">
             <objects>
@@ -287,6 +350,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="header.jpg" width="2305" height="1537"/>
         <image name="lock.png" width="256" height="256"/>
     </resources>
 </document>

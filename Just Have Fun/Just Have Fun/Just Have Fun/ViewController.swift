@@ -120,6 +120,18 @@ class ViewController: UIViewController {
             } 
         }
     }
+    @IBAction func onSettings(_ sender: Any) {
+        var popoverContent = self.storyboard?.instantiateViewController(withIdentifier:"SettingsViewController")
+        
+        popoverContent!.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        var popover = popoverContent!.popoverPresentationController
+        popoverContent!.preferredContentSize = CGSize(width: self.view.bounds.size.width-200, height: self.view.bounds.size.height-200)
+       
+        
+        self.present(popoverContent!, animated: true) {
+            
+        }
+    }
     
     @IBAction func onLockToggle(_ sender: Any) {
         self.isHeaderLocked = !self.isHeaderLocked

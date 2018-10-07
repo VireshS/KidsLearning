@@ -25,8 +25,8 @@ class SpeechEngine
         {
             SpeechEngine.defaultInstance.speakingSettings = settings!
         }
-        var a = AVSpeechSynthesisVoice.speechVoices()
-        print(AVSpeechSynthesisVoice.speechVoices())
+        //var a = AVSpeechSynthesisVoice.speechVoices()
+        //print(AVSpeechSynthesisVoice.speechVoices())
         return SpeechEngine.defaultInstance
     }
     func speak(message messageToSpeak:String)

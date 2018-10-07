@@ -11,8 +11,58 @@ import UIKit
 
 class DataLoader
 {
+    class func generateJsons()
+    {
+        /*
+         {
+            "name": "Green Apple",
+            "category": "Fruits",
+            "image": "Green_Apple-1.jpg"
+        }
+        */
+        //Images must be names as <first name>_<second name>-<incrementor> example: "Green_Apple-1.jpg"
+        
+        if let bundlePath = Bundle.main.path(forResource: "Fruits", ofType: "bundle")
+        {
+            if let bundle = Bundle(path: bundlePath)
+            {
+                var jsonString = "["
+                if let imageURLs = bundle.urls(forResourcesWithExtension: "jpg", subdirectory: "")
+                {
+                    for singleURL in imageURLs
+                    {
+                        let imagePath = singleURL.lastPathComponent
+                        if(imagePath.contains("Green_Apple-1.jpg"))
+                        {
+                            print(imagePath)
+                        }
+                        if let imageName = imagePath.components(separatedBy: "-").first
+                        {
+                            var validImageName = imageName.replacingOccurrences(of: "_", with: " ")
+                            validImageName = validImageName.replacingOccurrences(of: ".jpg", with: "")
+                            var singleObject = "{"
+                            singleObject = singleObject + "\"name\":\"\(validImageName)\","
+                            singleObject = singleObject + "\"category\":\"Fruits\","
+                            singleObject = singleObject + "\"image\":\"\(imagePath)\""
+                            singleObject = singleObject + "},"
+                            jsonString = jsonString + singleObject
+                        }
+                        
+                    }
+                    
+                }
+                jsonString.removeLast()
+                jsonString = jsonString + "]"
+                print(jsonString)
+            }
+        }
+        
+        
+        
+    }
     class func AllFruits()->[LearningEntity]
     {
+        DataLoader.generateJsons()
         if let path = Bundle.main.path(forResource: "AllFruits", ofType: "json") {
             do {
                 let jsonString = try String(contentsOfFile: path, encoding: .utf8)
