@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "AppMenuViewController.collectionView(_:cellForItemAt:):AppMenuViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.isMenuOpen">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -9,7 +9,7 @@ import UIKit
         self.layer.masksToBounds = false
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: -1, height: 1)
+        self.layer.shadowOffset = CGSize(width: 4, height: 4)
         self.layer.shadowRadius = 1
         
         //self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath

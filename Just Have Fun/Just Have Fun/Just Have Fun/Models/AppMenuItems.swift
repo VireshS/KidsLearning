@@ -17,6 +17,9 @@ enum AppMenuItems:String, Codable {
     case Objects
     case ABCD
     case Numbers
+    case Animals
+    case Flowers
+    case Settings
     
     static func allMenus()->[AppMenuItems]
     {
@@ -24,10 +27,13 @@ enum AppMenuItems:String, Codable {
             Colors,
             Fruits,
             Vegetables,
-            Vehicles,
             Objects,
+            Vehicles,
+            Animals,
+            Flowers,
             ABCD,
-            Numbers
+            Numbers,
+            Settings
         ]
     }
     func descriptionText() -> String
@@ -47,6 +53,12 @@ enum AppMenuItems:String, Codable {
             return "ABC"
         case .Numbers:
             return "NUMBERS"
+        case .Animals:
+            return "ANIMALS"
+        case .Settings:
+            return "SETTINGS"
+        case .Flowers:
+            return "FLOWERS"
         }
     }
     
@@ -60,13 +72,20 @@ enum AppMenuItems:String, Codable {
         case .Vegetables:
             return UIImage(named: "VegsIcon.jpg")!
         case .Vehicles:
-            return UIImage(named: "FruitsIcon.jpg")!
+            return UIImage(named: "Vehicles.jpg")!
         case .Objects:
-            return UIImage(named: "FruitsIcon.jpg")!
+            return UIImage(named: "objects.jpg")!
         case .ABCD:
             return UIImage(named: "FruitsIcon.jpg")!
         case .Numbers:
             return UIImage(named: "FruitsIcon.jpg")!
+        case .Animals:
+            return UIImage(named: "animal.jpg")!
+        case .Flowers:
+            return UIImage(named: "Flower.jpg")!
+        case .Settings:
+            return UIImage(named: "Settings")!
         }
+        
     }
 }

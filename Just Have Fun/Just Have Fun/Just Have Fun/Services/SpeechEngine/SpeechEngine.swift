@@ -9,6 +9,16 @@
 import Foundation
 import AVFoundation
 
+
+class AppSettings:NSObject
+{
+    var shouldProvideSoundFeedback = false
+    var shouldProvideHaptikFeedback = false
+    var shouldSpeakObjects = false
+    var shouldUseTaps = false
+}
+
+
 class SpeakingSettings
 {
     var rate = 0.75
@@ -17,9 +27,14 @@ class SpeakingSettings
 }
 class SpeechEngine
 {
+    private var settings:AppSettings = AppSettings()
     static let defaultInstance = SpeechEngine()
     private var speakingSettings = SpeakingSettings()
     private let speechSynthesizer = AVSpeechSynthesizer()
+    
+    func register(settings newSettings:AppSettings)  {
+        self.settings = newSettings
+    }
     class func defaultEngine(withSettings settings:SpeakingSettings? = nil) -> SpeechEngine {
         if(settings != nil)
         {
@@ -31,6 +46,10 @@ class SpeechEngine
     }
     func speak(message messageToSpeak:String)
     {
+        if(self.settings.shouldSpeakObjects == false)
+        {
+            return
+        }
         let speechUtterance = AVSpeechUtterance(string: messageToSpeak)
         speechUtterance.rate = 0.25
         speechUtterance.pitchMultiplier = 0.25
