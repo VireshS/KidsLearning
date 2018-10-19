@@ -11,15 +11,176 @@ import UIKit
 
 class DataLoader
 {
+    static var sharedDataLoader:DataLoader = DataLoader()
+    class func defaultLoader() -> DataLoader
+    {
+        return sharedDataLoader
+    }
+    
+    
+    
+    private var allFruits = [LearningEntity]()
+    private var allColors = [ColorPalette]()
+    private var allVegetables = [LearningEntity]()
+    private var allAnimals = [LearningEntity]()
+    private var allFlowers = [LearningEntity]()
+    private var allObjects = [LearningEntity]()
+    
+    
+    final func AllFruits()->[LearningEntity]
+    {
+        if(self.allFruits.count>0)
+        {
+            return self.allFruits
+        }
+        if let path = Bundle.main.path(forResource: "Fruits", ofType: "json") {
+            do {
+                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
+                if let jsonData = jsonString.data(using: .utf8)
+                {
+                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
+                    {
+                        return entityObject
+                    }
+                }
+            } catch {
+            }
+        }
+        return [LearningEntity]()
+    }
+    
+    final func AllColors()->[ColorPalette]
+    {
+        if(self.allColors.count>0)
+        {
+            return self.allColors
+        }
+        if let path = Bundle.main.path(forResource: "Colors", ofType: "json") {
+            do {
+                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
+                if let jsonData = jsonString.data(using: .utf8)
+                {
+                    if let entityObject = try? JSONDecoder().decode([ColorPalette].self, from: jsonData)
+                    {
+                        self.allColors = entityObject
+                        return entityObject
+                    }
+                }
+            } catch {
+            }
+        }
+        return [ColorPalette]()
+    }
+    
+    final func AllVegetables()->[LearningEntity]
+    {
+        if(self.allVegetables.count>0)
+        {
+            return self.allVegetables
+        }
+        if let path = Bundle.main.path(forResource: "Vegetables", ofType: "json") {
+            do {
+                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
+                if let jsonData = jsonString.data(using: .utf8)
+                {
+                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
+                    {
+                        self.allVegetables = entityObject
+                        return entityObject
+                    }
+                }
+            } catch {
+            }
+        }
+        return [LearningEntity]()
+    }
+    
+    final func AllAnimals()->[LearningEntity]
+    {
+        if(self.allAnimals.count>0)
+        {
+            return self.allAnimals
+        }
+        if let path = Bundle.main.path(forResource: "Animals", ofType: "json") {
+            do {
+                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
+                if let jsonData = jsonString.data(using: .utf8)
+                {
+                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
+                    {
+                        self.allAnimals = entityObject
+                        return entityObject
+                    }
+                }
+            } catch {
+            }
+        }
+        return [LearningEntity]()
+    }
+    
+    
+    final func AllFlowers()->[LearningEntity]
+    {
+        if(self.allFlowers.count>0)
+        {
+            return self.allFlowers
+        }
+        if let path = Bundle.main.path(forResource: "Flowers", ofType: "json") {
+            do {
+                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
+                if let jsonData = jsonString.data(using: .utf8)
+                {
+                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
+                    {
+                        self.allFlowers = entityObject
+                        return entityObject
+                    }
+                }
+            } catch {
+            }
+        }
+        return [LearningEntity]()
+    }
+    
+    
+    final func AllObjects()->[LearningEntity]
+    {
+        if(self.allObjects.count>0)
+        {
+            return self.allObjects
+        }
+        if let path = Bundle.main.path(forResource: "Objects", ofType: "json") {
+            do {
+                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
+                if let jsonData = jsonString.data(using: .utf8)
+                {
+                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
+                    {
+                        self.allObjects = entityObject
+                        return entityObject
+                    }
+                }
+            } catch {
+            }
+        }
+        return [LearningEntity]()
+    }
+    
+    
+    
+    
+    
+    
+    
     class func generateJsons()
     {
         /*
          {
-            "name": "Green Apple",
-            "category": "Fruits",
-            "image": "Green_Apple-1.jpg"
-        }
-        */
+         "name": "Green Apple",
+         "category": "Fruits",
+         "image": "Green_Apple-1.jpg"
+         }
+         */
         //Images must be names as <first name>_<second name>-<incrementor> example: "Green_Apple-1.jpg"
         
         var fruitsJsonString = "["
@@ -210,118 +371,5 @@ class DataLoader
                 print(vegJsonString)
             }
         }
-        
-        
-        
-        
-    }
-    class func AllFruits()->[LearningEntity]
-    {
-        if let path = Bundle.main.path(forResource: "Fruits", ofType: "json") {
-            do {
-                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
-                if let jsonData = jsonString.data(using: .utf8)
-                {
-                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
-                    {
-                        return entityObject
-                    }
-                }
-            } catch {
-            }
-        }
-        return [LearningEntity]()
-    }
-    
-    class func AllColors()->[ColorPalette]
-    {
-        if let path = Bundle.main.path(forResource: "Colors", ofType: "json") {
-            do {
-                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
-                if let jsonData = jsonString.data(using: .utf8)
-                {
-                    if let entityObject = try? JSONDecoder().decode([ColorPalette].self, from: jsonData)
-                    {
-                        return entityObject
-                    }
-                }
-            } catch {
-            }
-        }
-        return [ColorPalette]()
-    }
-    
-    class func AllVegetables()->[LearningEntity]
-    {
-        if let path = Bundle.main.path(forResource: "Vegetables", ofType: "json") {
-            do {
-                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
-                if let jsonData = jsonString.data(using: .utf8)
-                {
-                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
-                    {
-                        return entityObject
-                    }
-                }
-            } catch {
-            }
-        }
-        return [LearningEntity]()
-    }
-    
-    class func AllAnimals()->[LearningEntity]
-    {
-        if let path = Bundle.main.path(forResource: "Animals", ofType: "json") {
-            do {
-                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
-                if let jsonData = jsonString.data(using: .utf8)
-                {
-                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
-                    {
-                        return entityObject
-                    }
-                }
-            } catch {
-            }
-        }
-        return [LearningEntity]()
-    }
-    
-    
-    class func AllFlowers()->[LearningEntity]
-    {
-        if let path = Bundle.main.path(forResource: "Flowers", ofType: "json") {
-            do {
-                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
-                if let jsonData = jsonString.data(using: .utf8)
-                {
-                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
-                    {
-                        return entityObject
-                    }
-                }
-            } catch {
-            }
-        }
-        return [LearningEntity]()
-    }
-    
-    
-    class func AllObjects()->[LearningEntity]
-    {
-        if let path = Bundle.main.path(forResource: "Objects", ofType: "json") {
-            do {
-                let jsonString = try String(contentsOfFile: path, encoding: .utf8)
-                if let jsonData = jsonString.data(using: .utf8)
-                {
-                    if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
-                    {
-                        return entityObject
-                    }
-                }
-            } catch {
-            }
-        }
-        return [LearningEntity]()
     }
 }

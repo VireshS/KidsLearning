@@ -8,6 +8,158 @@
 
 import Foundation
 import UIKit
+class AppMenuListItem
+{
+    var menuMode:AppMenuItems = .Colors
+    var menuEntity:AnyObject  = DataLoader.sharedDataLoader.AllColors().first!
+}
+
+class AppMenu {
+    private static var sharedInstance:AppMenu? = nil
+    
+    private var allMenu = [AppMenuListItem]()
+    class func sharedMenu()->AppMenu
+    {
+        if(sharedInstance == nil)
+        {
+            sharedInstance = AppMenu()
+        }
+        if(sharedInstance!.allMenu.count<=0)
+        {
+            for item in sharedInstance!.allMenuModeEnumValues()
+            {
+                switch item {
+                case .Colors:
+                    let mapping = AppMenuListItem()
+                    mapping.menuMode = item
+                    if let firstItem = DataLoader.sharedDataLoader.AllColors().first
+                    {
+                        mapping.menuEntity = firstItem
+                    }
+                    sharedInstance?.allMenu.append(mapping)
+                case .Fruits:
+                    let mapping = AppMenuListItem()
+                    mapping.menuMode = item
+                    if let firstItem = DataLoader.sharedDataLoader.AllFruits().first
+                    {
+                        mapping.menuEntity = firstItem
+                    }
+                    sharedInstance?.allMenu.append(mapping)
+                case .Vegetables:
+                    let mapping = AppMenuListItem()
+                    mapping.menuMode = item
+                    if let firstItem = DataLoader.sharedDataLoader.AllVegetables().first
+                    {
+                        mapping.menuEntity = firstItem
+                    }
+                    sharedInstance?.allMenu.append(mapping)
+                case .Vehicles:
+                    let mapping = AppMenuListItem()
+                    mapping.menuMode = item
+                    if let firstItem = DataLoader.sharedDataLoader.AllVegetables().first
+                    {
+                        mapping.menuEntity = firstItem
+                    }
+                    sharedInstance?.allMenu.append(mapping)
+                case .Objects:
+                    let mapping = AppMenuListItem()
+                    mapping.menuMode = item
+                    if let firstItem = DataLoader.sharedDataLoader.AllObjects().first
+                    {
+                        mapping.menuEntity = firstItem
+                    }
+                    sharedInstance?.allMenu.append(mapping)
+                case .ABCD:
+//                    if let firstItem = DataLoader.sharedDataLoader.alla().first
+//                    {
+//                        sharedInstance.menuEntityMappings[item] = firstItem
+//                    }
+                    print("")
+                case .Numbers:
+//                    if let firstItem = DataLoader.sharedDataLoader.AllColors().first
+//                    {
+//                        sharedInstance.menuEntityMappings[item] = firstItem
+//                    }
+                    print("")
+                case .Animals:
+                    let mapping = AppMenuListItem()
+                    mapping.menuMode = item
+                    if let firstItem = DataLoader.sharedDataLoader.AllAnimals().first
+                    {
+                        mapping.menuEntity = firstItem
+                    }
+                    sharedInstance?.allMenu.append(mapping)
+                case .Flowers:
+                    let mapping = AppMenuListItem()
+                    mapping.menuMode = item
+                    if let firstItem = DataLoader.sharedDataLoader.AllFruits().first
+                    {
+                        mapping.menuEntity = firstItem
+                    }
+                    sharedInstance?.allMenu.append(mapping)
+                case .Settings:
+//                    if let firstItem = DataLoader.sharedDataLoader.AllColors().first
+//                    {
+//                        sharedInstance.menuEntityMappings[item] = firstItem
+//                    }
+                    print("")
+                }
+            }
+        }
+        return sharedInstance!
+    }
+    
+    func allMenus() -> [AppMenuListItem]
+    {
+        return self.allMenu
+    }
+    
+    func allMenuModeEnumValues() -> [AppMenuItems] {
+        return AppMenuItems.allMenus()
+    }
+    
+    func updateEntity(for newMode:AppMenuItems, entity:AnyObject)
+    {
+        for menu in AppMenu.sharedMenu().allMenus() {
+            if(menu.menuMode == newMode)
+            {
+                menu.menuEntity = entity
+                break
+            }
+        }
+    }
+    
+    func updateCurrentMenuMode(toMode mode:AppMenuItems)
+    {
+        var menuItemSelected:AppMenuListItem? = nil
+        var index:Int = -1
+        for menu in AppMenu.sharedMenu().allMenus() {
+            index = index + 1
+            if(menu.menuMode == mode)
+            {
+                menuItemSelected = menu
+                break
+            }
+        }
+        if(menuItemSelected != nil)
+        {
+            AppMenu.sharedMenu().allMenu.remove(at: index)
+            AppMenu.sharedMenu().allMenu.insert(menuItemSelected!, at: 0)
+        }
+    }
+    
+    func entity(for menuMode:AppMenuItems)->AnyObject?
+    {
+        for menu in AppMenu.sharedMenu().allMenus() {
+            if(menu.menuMode == menuMode)
+            {
+                return menu.menuEntity
+            }
+        }
+        return nil
+    }
+}
+
 
 enum AppMenuItems:String, Codable {
     case Colors

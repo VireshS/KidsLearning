@@ -1,14 +1,14 @@
 
 [
  {
- "name": "Red",
- "category": "Colors",
- "color": "e84118"
- },
- {
  "name": "Yellow",
  "category": "Colors",
  "color": "fbc531"
+ },
+ {
+ "name": "Red",
+ "category": "Colors",
+ "color": "e84118"
  },
  {
  "name": "Purple",

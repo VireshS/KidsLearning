@@ -13,6 +13,7 @@ class LearningEntityBrowserViewController: UIViewController {
     
     private var allEntities = [AnyObject]()
     var currentMode:AppMenuItems = .Colors
+    var currentEntity:AnyObject? = nil
     func refresh(with Entities:[AnyObject]){
         self.allEntities.removeAll()
         self.allEntities.append(contentsOf: Entities)
@@ -40,7 +41,7 @@ class LearningEntityBrowserViewController: UIViewController {
         }
     }
     
-    func nextEntity()
+    func nextEntity()->AnyObject
     {
         if(self.currentDisplayingIndex >= self.allEntities.count - 1)
         {
@@ -54,9 +55,10 @@ class LearningEntityBrowserViewController: UIViewController {
         
         let entity = self.allEntities[self.currentDisplayingIndex]
         self.show(newEntity: entity)
+        return entity
     }
     
-    func previousEntity()
+    func previousEntity()->AnyObject
     {
 //        if(self.currentDisplayingIndex >= self.allEntities.count - 1)
 //        {
@@ -70,11 +72,13 @@ class LearningEntityBrowserViewController: UIViewController {
         
         let entity = self.allEntities[self.currentDisplayingIndex]
         self.show(newEntity: entity)
+        return entity
     }
     
     
     private func show(newEntity entity:AnyObject)
     {
+        self.currentEntity = entity
         if let imageEntity = entity as? LearningEntity
         {
             self.imageView.isHidden = false

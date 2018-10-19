@@ -15,26 +15,36 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var leading: NSLayoutConstraint!
     @IBOutlet weak var top: NSLayoutConstraint!
     @IBOutlet weak var bottom: NSLayoutConstraint!
-    
     var currentMenuItem:AppMenuItems = .Colors
+    var currentMenuEntity:AnyObject? = nil
     {
         didSet{
-            
-            self.menuImage.image = self.currentMenuItem.titleImage()
-            if (self.currentMenuItem == .Settings)
+            if let imageEntity = self.currentMenuEntity as? LearningEntity
             {
-//                self.leading.constant = 30
-//                self.top.constant = 30
-//                self.bottom.constant = 30
-//                self.trailing.constant = 30
+                self.menuImage.isHidden = false
+                self.menuImage.image = imageEntity.Image()
             }
-            else
+            else if let colorEntity = self.currentMenuEntity as? ColorPalette
             {
-//                self.leading.constant = 0
-//                self.top.constant = 0
-//                self.bottom.constant = 0
-//                self.trailing.constant = 0
+                self.menuImage.isHidden = true
+                let color = colorEntity.actualColor()
+                self.contentView.backgroundColor = color
             }
+//           // self.menuImage.image = self.currentMenuItem.titleImage()
+//            if (self.currentMenuItem == .Settings)
+//            {
+////                self.leading.constant = 30
+////                self.top.constant = 30
+////                self.bottom.constant = 30
+////                self.trailing.constant = 30
+//            }
+//            else
+//            {
+////                self.leading.constant = 0
+////                self.top.constant = 0
+////                self.bottom.constant = 0
+////                self.trailing.constant = 0
+//            }
         }
     }
     override func awakeFromNib() {
@@ -46,9 +56,11 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     func prepare()  {
         self.backgroundColor = UIColor.clear
         self.menuImage.backgroundColor = UIColor.white
+        self.contentView.layer.cornerRadius = self.contentView.bounds.height/2
         self.menuImage.layer.cornerRadius = self.menuImage.bounds.height/2
-        self.menuImage.layer.borderColor = UIColor.white.cgColor
-        self.menuImage.layer.borderWidth = 3
+        self.contentView.layer.borderColor = UIColor.white.cgColor
+        self.contentView.layer.borderWidth = 3
+        self.contentView.clipsToBounds = true
         self.menuImage.clipsToBounds = true
     }
 

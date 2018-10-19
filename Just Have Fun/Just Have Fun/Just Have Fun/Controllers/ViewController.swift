@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     func loadMenu()
     {
-        self.menuController = AppMenuViewController.menuController(with: self.appMenuItems, andDelegate: self)
+        self.menuController = AppMenuViewController.menuController(with: self)
         self.menuController?.view.backgroundColor = UIColor.clear
         self.menuController?.view.frame = CGRect(x: 0, y: self.view.frame.size.height-150, width: self.view.frame.size.width, height: 150)
         self.view.addSubview(self.menuController!.view)
@@ -53,6 +53,18 @@ class ViewController: UIViewController {
             {
                 return browser
             }
+        }
+        return nil
+    }
+    
+    private func currentBrowser()->LearningEntityBrowserViewController?
+    {
+        for browser in self.learningEntityBrowsers {
+            if(browser.currentMode == self.currentMenuMode)
+            {
+                return browser
+            }
+            
         }
         return nil
     }
@@ -87,27 +99,27 @@ class ViewController: UIViewController {
     {
         if(mode == .Animals)
         {
-            return DataLoader.AllAnimals()
+            return DataLoader.defaultLoader().AllAnimals()
         }
         if(mode == .Flowers)
         {
-            return DataLoader.AllFlowers()
+            return DataLoader.defaultLoader().AllFlowers()
         }
         if(mode == .Fruits)
         {
-            return DataLoader.AllFruits()
+            return DataLoader.defaultLoader().AllFruits()
         }
         if(mode == .Objects)
         {
-           return DataLoader.AllObjects()
+           return DataLoader.defaultLoader().AllObjects()
         }
         if(mode == .Vegetables)
         {
-            return DataLoader.AllVegetables()
+            return DataLoader.defaultLoader().AllVegetables()
         }
         if(mode == .Colors)
         {
-            return DataLoader.AllColors()
+            return DataLoader.defaultLoader().AllColors()
         }
         return [AnyObject]()
     }
@@ -126,65 +138,65 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let mode = (collectionView.cellForItem(at: indexPath) as? AppMenuCollectionViewCell)?.currentMenuMode
-        {
-            let textToSpeak = mode.descriptionText()
-            self.addBrowser(for: mode)
-            SpeechEngine.defaultEngine().speak(message: textToSpeak)
-            self.currentMenuMode = mode
-        }
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return self.appMenuItems.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppMenuCollectionViewCell", for: indexPath) as? AppMenuCollectionViewCell
-        {
-            cell.currentMenuMode = self.appMenuItems[indexPath.section]
-            cell.updateCell()
-            if(cell.currentMenuMode == self.currentMenuMode)
-            {
-                //cell.backgroundColor = UIColor.white
-                cell.makeActive()
-            }
-            else
-            {
-               // cell.backgroundColor = UIColor.clear
-                cell.makeInactive()
-            }
-            return cell
-        }
-        return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 250, height: collectionView.frame.size.height)
-    }
-    
-   
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-    
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-}
+//extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+//{
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if let mode = (collectionView.cellForItem(at: indexPath) as? AppMenuCollectionViewCell)?.currentMenuMode
+//        {
+//            let textToSpeak = mode.descriptionText()
+//            self.addBrowser(for: mode)
+//            SpeechEngine.defaultEngine().speak(message: textToSpeak)
+//            self.currentMenuMode = mode
+//        }
+//    }
+//    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return self.appMenuItems.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 1
+//    }
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppMenuCollectionViewCell", for: indexPath) as? AppMenuCollectionViewCell
+//        {
+//            cell.currentMenuMode = self.appMenuItems[indexPath.section]
+//            cell.updateCell()
+//            if(cell.currentMenuMode == self.currentMenuMode)
+//            {
+//                //cell.backgroundColor = UIColor.white
+//                cell.makeActive()
+//            }
+//            else
+//            {
+//               // cell.backgroundColor = UIColor.clear
+//                cell.makeInactive()
+//            }
+//            return cell
+//        }
+//        return UICollectionViewCell()
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 250, height: collectionView.frame.size.height)
+//    }
+//    
+//   
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//    }
+//    
+//
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0
+//    }
+//}
 extension ViewController:MenuChangedProtocol
 {
     func didChanged(menu tomode: AppMenuItems) {
@@ -202,6 +214,10 @@ extension ViewController:MenuChangedProtocol
             return
         }
         self.addBrowser(for: tomode)
+        if let currentBrowser = self.browser(for: tomode)
+        {
+            AppMenu.sharedMenu().updateEntity(for: tomode, entity:currentBrowser.currentEntity!)
+        }
         SpeechEngine.defaultEngine().speak(message: tomode.descriptionText())
         self.currentMenuMode = tomode
     }
@@ -211,16 +227,22 @@ extension ViewController
     @IBAction func onNext(_ sender: Any) {
         if let learningBrowser = self.browser(for: self.currentMenuMode!)
         {
-            learningBrowser.nextEntity()
+            let currentEntity = learningBrowser.nextEntity()
+            AppMenu.sharedMenu().updateEntity(for: self.currentMenuMode!, entity: currentEntity)
+            //self.menuController?.updateLearningEntity(for: self.currentMenuMode!, withEntity: currentEntity)
         }
+        self.menuController?.collapseMenu()
     }
     
     
     @IBAction func onPrevious(_ sender: Any) {
         if let learningBrowser = self.browser(for: self.currentMenuMode!)
         {
-            learningBrowser.previousEntity()
+            let currentEntity = learningBrowser.previousEntity()
+            //self.menuController?.updateLearningEntity(for: self.currentMenuMode!, withEntity: currentEntity)
+            AppMenu.sharedMenu().updateEntity(for: self.currentMenuMode!, entity: currentEntity)
         }
+        self.menuController?.collapseMenu()
     }
 }
 

@@ -16,9 +16,26 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     var isMenuOpen = false
     var delegate :MenuChangedProtocol? = nil
-    private var appMenuItems:[AppMenuItems] = [AppMenuItems]()
-    private var tempAppMenuItems:[AppMenuItems] = [AppMenuItems]()
+    private var appMenu = AppMenu.sharedMenu()
+    //private var appMenuItemEntities:[String:AnyObject?] = [String:AnyObject?]()
+    //private var tempAppMenuItems:[AppMenuItems] = [AppMenuItems]()
     //private var currentMenuMode :AppMenuItems = .Colors
+   
+//    func updateLearningEntity(for mode:AppMenuItems, withEntity:AnyObject)
+//    {
+//        self.appMenuItemEntities[mode.descriptionText()] = withEntity
+//        var cellsToReload = [IndexPath]()
+//        for cell in self.collectionView.visibleCells {
+//            if let uwpCell = cell as? MenuItemCollectionViewCell
+//            {
+//                if(uwpCell.currentMenuItem == mode)
+//                {
+//                    cellsToReload.append(self.collectionView.indexPath(for: uwpCell)!)
+//                }
+//            }
+//        }
+//        self.collectionView.reloadItems(at: cellsToReload)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,21 +67,33 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
 //        self.collectionView.insertSections([5])
         if let weakDeleagte = self.delegate
         {
-            weakDeleagte.didChanged(menu: self.appMenuItems.first!)
+            weakDeleagte.didChanged(menu: self.appMenu.allMenuModeEnumValues().first!)
         }
     }
     
-    private func openMenu()
+    
+    
+    final func openMenu()
     {
-        //self.collectionView.isHidden = false
-       // self.mainImage.isHidden = true
-    }
-    private func collapseMenu()
-    {
-        self.isMenuOpen = !self.isMenuOpen
+        if(self.isMenuOpen != true)
+        {
+            self.isMenuOpen = true
+        }
         self.collectionView.reloadData()
-        return
-        
+    }
+    
+    final func collapseMenu()
+    {
+        if(self.isMenuOpen != false)
+        {
+            self.isMenuOpen = false
+        }
+        self.collectionView.reloadData()
+    }
+    
+    private func toggleMenu()
+    {
+        self.isMenuOpen ? self.collapseMenu() : self.openMenu()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -79,13 +108,13 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     
-    class func menuController(with menuItems:[AppMenuItems], andDelegate:MenuChangedProtocol)->AppMenuViewController?
+    class func menuController(with delegate:MenuChangedProtocol)->AppMenuViewController?
     {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let controller = sb.instantiateViewController(withIdentifier: "AppMenuViewController") as? AppMenuViewController
         {
-            controller.delegate = andDelegate
-            controller.appMenuItems = menuItems
+            controller.delegate = delegate
+            controller.appMenu = AppMenu.sharedMenu()
             //controller.currentMenuMode = menuItems.first!
             return controller
         }
@@ -100,19 +129,20 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
                 {
                     if(menuMode != .Settings)
                     {
-                        self.appMenuItems.remove(at: self.appMenuItems.index(of: menuMode)!)
-                        self.appMenuItems.insert(menuMode, at: 0)
+//                        self.appMenuItems.remove(at: self.appMenuItems.index(of: menuMode)!)
+//                        self.appMenuItems.insert(menuMode, at: 0)
                         self.mainImage.image = menuMode.titleImage()
                     }
+                    AppMenu.sharedMenu().updateCurrentMenuMode(toMode: menuMode)
                     weakDeleagte.didChanged(menu: menuMode)
                 }
              }
-         self.collapseMenu()
+         self.toggleMenu()
         }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return self.isMenuOpen ? self.appMenuItems.count :1
+        return self.isMenuOpen ? self.appMenu.allMenus().count :1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -121,7 +151,9 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuItemCollectionViewCell", for: indexPath) as? MenuItemCollectionViewCell
         {
-            cell.currentMenuItem = self.appMenuItems[indexPath.section]
+            let allMenus = self.appMenu.allMenus()
+            cell.currentMenuItem = allMenus[indexPath.section].menuMode
+            cell.currentMenuEntity = allMenus[indexPath.section].menuEntity
             return cell
         }
         return UICollectionViewCell()
