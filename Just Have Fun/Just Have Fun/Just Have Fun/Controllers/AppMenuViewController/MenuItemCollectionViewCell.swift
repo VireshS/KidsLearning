@@ -22,13 +22,26 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
             if let imageEntity = self.currentMenuEntity as? LearningEntity
             {
                 self.menuImage.isHidden = false
-                self.menuImage.image = imageEntity.Image()
+                if(self.currentMenuItem == .Settings)
+                {
+                    self.menuImage.image = self.currentMenuItem.titleImage()
+                }
+                else
+                {
+                    if(AppSettings.shared().shouldUseDynamicMenuIcons)
+                    {
+                        self.menuImage.image = imageEntity.Image()
+                    }
+                    else
+                    {
+                        self.menuImage.image = self.currentMenuItem.titleImage()
+                    }
+                }
             }
             else if let colorEntity = self.currentMenuEntity as? ColorPalette
             {
-                self.menuImage.isHidden = true
-                let color = colorEntity.actualColor()
-                self.contentView.backgroundColor = color
+                self.menuImage.isHidden = false
+                self.menuImage.image = self.currentMenuItem.titleImage()
             }
 //           // self.menuImage.image = self.currentMenuItem.titleImage()
 //            if (self.currentMenuItem == .Settings)

@@ -8,38 +8,42 @@
 
 import UIKit
 protocol SettingsChangedProtocol {
-    func onSettingsChanged(settings newSettings:AppSettings)
+    func onSettingsChanged()
 }
 
 class SettingsViewCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var settingsSwitch: UISwitch!
     var delegate:SettingsChangedProtocol? = nil
-    var currentSettings:AppSettings? = nil
     var currentSettingMode:SettingsType = .SoundFeedback
     {
         didSet
         {
             self.label.text = self.currentSettingMode.displayText()
-            if(self.currentSettingMode == .SoundFeedback)
+            if(self.currentSettingMode == .DynamicMenuIcon)
             {
                 self.settingsSwitch.isHidden = false
-                self.settingsSwitch.setOn(self.currentSettings?.shouldProvideSoundFeedback == true, animated: true)
+                self.settingsSwitch.setOn(AppSettings.shared().shouldUseDynamicMenuIcons == true, animated: true)
+            }
+            else if(self.currentSettingMode == .SoundFeedback)
+            {
+                self.settingsSwitch.isHidden = false
+                self.settingsSwitch.setOn(AppSettings.shared().shouldProvideSoundFeedback == true, animated: true)
             }
             else if(self.currentSettingMode == .HaptikFeedback)
             {
                 self.settingsSwitch.isHidden = false
-                self.settingsSwitch.setOn(self.currentSettings?.shouldProvideHaptikFeedback == true, animated: true)
+                self.settingsSwitch.setOn(AppSettings.shared().shouldProvideHaptikFeedback == true, animated: true)
             }
             else if(self.currentSettingMode == .SpeakTheObjects)
             {
                 self.settingsSwitch.isHidden = false
-                self.settingsSwitch.setOn(self.currentSettings?.shouldSpeakObjects == true, animated: true)
+                self.settingsSwitch.setOn(AppSettings.shared().shouldSpeakObjects == true, animated: true)
             }
             else if(self.currentSettingMode == .UseNextPreviousButtons)
             {
                 self.settingsSwitch.isHidden = true
-                if(self.currentSettings?.shouldUseTaps == false)
+                if(AppSettings.shared().shouldUseTaps == false)
                 {
                     self.accessoryType = .checkmark
                 }
@@ -51,7 +55,7 @@ class SettingsViewCell: UITableViewCell {
             else if(self.currentSettingMode == .UseTaps)
             {
                 self.settingsSwitch.isHidden = true
-                if(self.currentSettings?.shouldUseTaps == true)
+                if(AppSettings.shared().shouldUseTaps == true)
                 {
                     self.accessoryType = .checkmark
                 }
@@ -70,29 +74,30 @@ class SettingsViewCell: UITableViewCell {
     
     
     @IBAction func onSettingsChanged(_ sender: Any) {
-        if(self.currentSettings == nil)
+        
+        if(self.currentSettingMode == .DynamicMenuIcon)
         {
-            self.currentSettings = AppSettings()
+            AppSettings.shared().shouldUseDynamicMenuIcons = self.settingsSwitch.isOn
         }
-        if(self.currentSettingMode == .SoundFeedback)
+        else if(self.currentSettingMode == .SoundFeedback)
         {
-            self.currentSettings?.shouldProvideSoundFeedback = self.settingsSwitch.isOn
+            AppSettings.shared().shouldProvideSoundFeedback = self.settingsSwitch.isOn
         }
         else if(self.currentSettingMode == .HaptikFeedback)
         {
-           self.currentSettings?.shouldProvideHaptikFeedback = self.settingsSwitch.isOn
+           AppSettings.shared().shouldProvideHaptikFeedback = self.settingsSwitch.isOn
         }
         else if(self.currentSettingMode == .SpeakTheObjects)
         {
-           self.currentSettings?.shouldSpeakObjects = self.settingsSwitch.isOn
+           AppSettings.shared().shouldSpeakObjects = self.settingsSwitch.isOn
         }
         else if(self.currentSettingMode == .UseNextPreviousButtons || self.currentSettingMode == .UseTaps)
         {
-            self.currentSettings?.shouldUseTaps = (self.accessoryType == .checkmark)
+            AppSettings.shared().shouldUseTaps = (self.accessoryType == .checkmark)
         }
         if let del = self.delegate
         {
-            del.onSettingsChanged(settings: self.currentSettings!)
+            del.onSettingsChanged()
         }
     }
 }

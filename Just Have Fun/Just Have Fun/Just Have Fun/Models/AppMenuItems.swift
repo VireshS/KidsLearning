@@ -54,13 +54,14 @@ class AppMenu {
                     }
                     sharedInstance?.allMenu.append(mapping)
                 case .Vehicles:
-                    let mapping = AppMenuListItem()
-                    mapping.menuMode = item
-                    if let firstItem = DataLoader.sharedDataLoader.AllVegetables().first
-                    {
-                        mapping.menuEntity = firstItem
-                    }
-                    sharedInstance?.allMenu.append(mapping)
+//                    let mapping = AppMenuListItem()
+//                    mapping.menuMode = item
+//                    if let firstItem = DataLoader.sharedDataLoader.all().first
+//                    {
+//                        mapping.menuEntity = firstItem
+//                    }
+//                    sharedInstance?.allMenu.append(mapping)
+                    break
                 case .Objects:
                     let mapping = AppMenuListItem()
                     mapping.menuMode = item
@@ -92,17 +93,16 @@ class AppMenu {
                 case .Flowers:
                     let mapping = AppMenuListItem()
                     mapping.menuMode = item
-                    if let firstItem = DataLoader.sharedDataLoader.AllFruits().first
+                    if let firstItem = DataLoader.sharedDataLoader.AllFlowers().first
                     {
                         mapping.menuEntity = firstItem
                     }
                     sharedInstance?.allMenu.append(mapping)
                 case .Settings:
-//                    if let firstItem = DataLoader.sharedDataLoader.AllColors().first
-//                    {
-//                        sharedInstance.menuEntityMappings[item] = firstItem
-//                    }
-                    print("")
+                    let mapping = AppMenuListItem()
+                    mapping.menuMode = item
+                    mapping.menuEntity = LearningEntity()
+                    sharedInstance?.allMenu.append(mapping)
                 }
             }
         }

@@ -132,8 +132,8 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
 //                        self.appMenuItems.remove(at: self.appMenuItems.index(of: menuMode)!)
 //                        self.appMenuItems.insert(menuMode, at: 0)
                         self.mainImage.image = menuMode.titleImage()
+                        AppMenu.sharedMenu().updateCurrentMenuMode(toMode: menuMode)
                     }
-                    AppMenu.sharedMenu().updateCurrentMenuMode(toMode: menuMode)
                     weakDeleagte.didChanged(menu: menuMode)
                 }
              }

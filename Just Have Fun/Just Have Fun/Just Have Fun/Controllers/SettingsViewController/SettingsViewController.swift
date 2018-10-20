@@ -9,6 +9,7 @@
 import UIKit
 
 enum SettingsType {
+    case DynamicMenuIcon
     case SoundFeedback
     case HaptikFeedback
     case SpeakTheObjects
@@ -17,7 +18,11 @@ enum SettingsType {
     
     func displayText()->String
     {
-        if(self == .SoundFeedback)
+        if(self == .DynamicMenuIcon)
+        {
+            return "Use Dynamic Menu Icons"
+        }
+        else if(self == .SoundFeedback)
         {
             return "Sound Feedback on Tap"
         }
@@ -43,7 +48,6 @@ enum SettingsType {
 
 class SettingsViewController: UIViewController
 {
-    var currentSettings = AppSettings()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,12 +68,12 @@ class SettingsViewController: UIViewController
 
 extension SettingsViewController:UITableViewDelegate, UITableViewDataSource,SettingsChangedProtocol
 {
-    func onSettingsChanged(settings newSettings: AppSettings) {
-        SpeechEngine.defaultEngine().register(settings: newSettings)
+    func onSettingsChanged() {
+        //SpeechEngine.defaultEngine().register(settings: newSettings)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,18 +83,21 @@ extension SettingsViewController:UITableViewDelegate, UITableViewDataSource,Sett
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsViewCell", for: indexPath) as? SettingsViewCell
         {
-            cell.currentSettings = self.currentSettings
             if(indexPath.section == 0)
             {
                 if(indexPath.row == 0)
                 {
-                    cell.currentSettingMode = .SoundFeedback
+                    cell.currentSettingMode = .DynamicMenuIcon
                 }
                 else if(indexPath.row == 1)
                 {
-                    cell.currentSettingMode = .HaptikFeedback
+                    cell.currentSettingMode = .SoundFeedback
                 }
                 else if(indexPath.row == 2)
+                {
+                    cell.currentSettingMode = .HaptikFeedback
+                }
+                else if(indexPath.row == 3)
                 {
                     cell.currentSettingMode = .SpeakTheObjects
                 }
@@ -114,18 +121,12 @@ extension SettingsViewController:UITableViewDelegate, UITableViewDataSource,Sett
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.section == 1)
+        if let cell = tableView.cellForRow(at: indexPath) as? SettingsViewCell
         {
-            if(indexPath.row == 0)
-            {
-                self.currentSettings.shouldUseTaps = false
-            }
-            else if(indexPath.row == 1)
-            {
-                self.currentSettings.shouldUseTaps = true
-            }
-            tableView.reloadData()
+            let mode = cell.currentSettingMode
+            
         }
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

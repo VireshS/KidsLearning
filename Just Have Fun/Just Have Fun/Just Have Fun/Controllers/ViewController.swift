@@ -205,7 +205,7 @@ extension ViewController:MenuChangedProtocol
             let popoverContent = self.storyboard?.instantiateViewController(withIdentifier:"SettingsViewController")
             popoverContent!.modalPresentationStyle = UIModalPresentationStyle.formSheet
             let popover = popoverContent!.popoverPresentationController
-            popoverContent!.preferredContentSize = CGSize(width: self.view.bounds.size.width-200, height: self.view.bounds.size.height-200)
+            popoverContent!.preferredContentSize = CGSize(width: self.view.bounds.size.width-300, height: self.view.bounds.size.height-200)
             
             
             self.present(popoverContent!, animated: true) {
@@ -217,8 +217,16 @@ extension ViewController:MenuChangedProtocol
         if let currentBrowser = self.browser(for: tomode)
         {
             AppMenu.sharedMenu().updateEntity(for: tomode, entity:currentBrowser.currentEntity!)
+            if let entity = currentBrowser.currentEntity as? LearningEntity
+            {
+                SpeechEngine.defaultEngine().speak(message:entity.name)
+            }
+            else if let entity = currentBrowser.currentEntity as? ColorPalette
+            {
+                SpeechEngine.defaultEngine().speak(message:entity.name)
+            }
         }
-        SpeechEngine.defaultEngine().speak(message: tomode.descriptionText())
+        
         self.currentMenuMode = tomode
     }
 }
@@ -230,6 +238,14 @@ extension ViewController
             let currentEntity = learningBrowser.nextEntity()
             AppMenu.sharedMenu().updateEntity(for: self.currentMenuMode!, entity: currentEntity)
             //self.menuController?.updateLearningEntity(for: self.currentMenuMode!, withEntity: currentEntity)
+            if let entity = currentEntity as? LearningEntity
+            {
+                SpeechEngine.defaultEngine().speak(message:entity.name)
+            }
+            else if let entity = currentEntity as? ColorPalette
+            {
+                SpeechEngine.defaultEngine().speak(message:entity.name)
+            }
         }
         self.menuController?.collapseMenu()
     }
@@ -241,6 +257,15 @@ extension ViewController
             let currentEntity = learningBrowser.previousEntity()
             //self.menuController?.updateLearningEntity(for: self.currentMenuMode!, withEntity: currentEntity)
             AppMenu.sharedMenu().updateEntity(for: self.currentMenuMode!, entity: currentEntity)
+            if let entity = currentEntity as? LearningEntity
+            {
+                SpeechEngine.defaultEngine().speak(message:entity.name)
+            }
+            else if let entity = currentEntity as? ColorPalette
+            {
+                SpeechEngine.defaultEngine().speak(message:entity.name)
+            }
+            
         }
         self.menuController?.collapseMenu()
     }

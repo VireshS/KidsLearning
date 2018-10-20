@@ -12,10 +12,78 @@ import AVFoundation
 
 class AppSettings:NSObject
 {
+    var shouldUseDynamicMenuIcons = true
+    {
+        didSet{
+            UserDefaults.standard.set(shouldUseDynamicMenuIcons, forKey: "shouldUseDynamicMenuIcons")
+            UserDefaults.standard.synchronize()
+        }
+    }
     var shouldProvideSoundFeedback = false
+    {
+        didSet{
+            UserDefaults.standard.set(shouldProvideSoundFeedback, forKey: "shouldProvideSoundFeedback")
+            UserDefaults.standard.synchronize()
+        }
+    }
     var shouldProvideHaptikFeedback = false
+    {
+        didSet{
+            UserDefaults.standard.set(shouldProvideHaptikFeedback, forKey: "shouldProvideHaptikFeedback")
+            UserDefaults.standard.synchronize()
+        }
+    }
     var shouldSpeakObjects = false
+    {
+        didSet{
+            UserDefaults.standard.set(shouldSpeakObjects, forKey: "shouldSpeakObjects")
+            UserDefaults.standard.synchronize()
+        }
+    }
     var shouldUseTaps = false
+    {
+        didSet{
+            UserDefaults.standard.set(shouldUseTaps, forKey: "shouldUseTaps")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    let speakingSettings = SpeakingSettings()
+    private static var settings:AppSettings? = nil
+    class func shared() -> AppSettings
+    {
+        if(settings == nil)
+        {
+            settings = AppSettings()
+            settings!.updateDefaultSettings()
+        }
+        return settings!
+    }
+    
+    func clone() -> AppSettings {
+        let newSettings = AppSettings()
+        newSettings.shouldUseDynamicMenuIcons = self.shouldUseDynamicMenuIcons
+        newSettings.shouldProvideSoundFeedback = self.shouldProvideSoundFeedback
+        newSettings.shouldProvideHaptikFeedback = self.shouldProvideHaptikFeedback
+        newSettings.shouldSpeakObjects = self.shouldSpeakObjects
+        newSettings.shouldUseTaps = self.shouldUseTaps
+        newSettings.speakingSettings.rate = self.speakingSettings.rate
+        newSettings.speakingSettings.volume = self.speakingSettings.volume
+        newSettings.speakingSettings.pitchMultiplier = self.speakingSettings.pitchMultiplier
+        return newSettings
+    }
+    
+    private func updateDefaultSettings()
+    {
+        self.shouldUseDynamicMenuIcons = UserDefaults.standard.bool(forKey: "UserDefaults.standard.bool(forKey: shouldUseDynamicMenuIcons)")
+        self.shouldProvideSoundFeedback = UserDefaults.standard.bool(forKey: "shouldProvideSoundFeedback")
+        self.shouldProvideHaptikFeedback = UserDefaults.standard.bool(forKey: "shouldProvideHaptikFeedback")
+        self.shouldSpeakObjects = UserDefaults.standard.bool(forKey: "shouldSpeakObjects")
+        self.shouldUseTaps = UserDefaults.standard.bool(forKey: "shouldUseTaps")
+        self.speakingSettings.rate = 0.3
+        self.speakingSettings.volume = 0.75
+        self.speakingSettings.pitchMultiplier = 0.75
+    }
+    
 }
 
 
@@ -46,15 +114,15 @@ class SpeechEngine
     }
     func speak(message messageToSpeak:String)
     {
-        if(self.settings.shouldSpeakObjects == false)
+        if(AppSettings.shared().shouldProvideSoundFeedback == false)
         {
             return
         }
         let speechUtterance = AVSpeechUtterance(string: messageToSpeak)
-        speechUtterance.rate = 0.25
-        speechUtterance.pitchMultiplier = 0.25
-        speechUtterance.volume = 0.75
-        let voice = AVSpeechSynthesisVoice(language: "hi-IN")
+        speechUtterance.rate = Float(AppSettings.shared().speakingSettings.rate)
+        speechUtterance.pitchMultiplier = Float(AppSettings.shared().speakingSettings.pitchMultiplier)
+        speechUtterance.volume = Float(AppSettings.shared().speakingSettings.volume)
+        let voice = AVSpeechSynthesisVoice(language: "en-US")
         speechUtterance.voice = voice
         self.stopSpeaking()
         self.speechSynthesizer.speak(speechUtterance)

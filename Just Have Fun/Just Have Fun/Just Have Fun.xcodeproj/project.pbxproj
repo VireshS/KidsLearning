@@ -1385,15 +1385,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QF3Y3JH9KE;
 				INFOPLIST_FILE = "Just Have Fun/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.honeywell.Just-Have-Fun";
+				PRODUCT_BUNDLE_IDENTIFIER = com.honeywell.justhavefun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "308426c0-b6d7-40d2-ad71-78f52d3463dd";
+				PROVISIONING_PROFILE_SPECIFIER = "Just Have Fun Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Just Have Fun-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1406,15 +1410,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QF3Y3JH9KE;
 				INFOPLIST_FILE = "Just Have Fun/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.honeywell.Just-Have-Fun";
+				PRODUCT_BUNDLE_IDENTIFIER = com.honeywell.justhavefun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1a56cb72-bf1b-405f-b925-634468148536";
+				PROVISIONING_PROFILE_SPECIFIER = "Jus Have Fun Enterprise Distribution";
 				SWIFT_OBJC_BRIDGING_HEADER = "Just Have Fun-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
