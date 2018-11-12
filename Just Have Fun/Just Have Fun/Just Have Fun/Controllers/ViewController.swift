@@ -202,25 +202,23 @@ class ViewController: UIViewController {
 extension ViewController:SettingsChangedProtocol
 {
     func onSettingsChanged() {
+        self.slideShowTimer?.invalidate()
+        self.slideShowTimer = nil
         if(AppSettings.shared().shouldSlideShow)
         {
             print("Switching to Auto Slide Show Mode...")
-            if(self.slideShowTimer == nil)
-            {
-                self.slideShowTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onSlideShowTimerFired), userInfo: nil, repeats: true)
-            }
+            self.slideShowTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(onSlideShowTimerFired), userInfo: nil, repeats: true)
         }
         else
         {
              print("Turning Off the Auto Slide Show Mode...")
-            self.slideShowTimer?.invalidate()
-            self.slideShowTimer = nil
         }
     }
     
+    
     @objc func onSlideShowTimerFired()
     {
-        self.onNext(self.nextView)
+        self.nextEntity(shouldCollapseMenu: false)
     }
 }
 extension ViewController:MenuChangedProtocol
@@ -282,6 +280,13 @@ extension ViewController:MenuChangedProtocol
 extension ViewController
 {
     @IBAction func onNext(_ sender: Any) {
+        self.nextEntity(shouldCollapseMenu: true)
+        self.onSettingsChanged()
+        self.menuController?.collapseMenu()
+    }
+    
+    func nextEntity(shouldCollapseMenu collapseMenu:Bool)
+    {
         if let learningBrowser = self.browser(for: self.currentMenuMode!)
         {
             let currentEntity = learningBrowser.nextEntity()
@@ -296,27 +301,37 @@ extension ViewController
                 SpeechEngine.defaultEngine().speak(message:entity.name)
             }
         }
+        self.menuController?.collapseMenu(shouldOnlyReload: !collapseMenu)
+    }
+    
+    @IBAction func onPrevious(_ sender: Any) {
+        
+        self.previousEntity(shouldCollapseMenu: true)
+        self.onSettingsChanged()
         self.menuController?.collapseMenu()
     }
     
-    
-    @IBAction func onPrevious(_ sender: Any) {
+    func previousEntity(shouldCollapseMenu collapseMenu:Bool)
+    {
         if let learningBrowser = self.browser(for: self.currentMenuMode!)
         {
-            let currentEntity = learningBrowser.previousEntity()
-            //self.menuController?.updateLearningEntity(for: self.currentMenuMode!, withEntity: currentEntity)
-            AppMenu.sharedMenu().updateEntity(for: self.currentMenuMode!, entity: currentEntity)
-            if let entity = currentEntity as? LearningEntity
+            if let learningBrowser = self.browser(for: self.currentMenuMode!)
             {
-                SpeechEngine.defaultEngine().speak(message:entity.name)
+                let currentEntity = learningBrowser.previousEntity()
+                //self.menuController?.updateLearningEntity(for: self.currentMenuMode!, withEntity: currentEntity)
+                AppMenu.sharedMenu().updateEntity(for: self.currentMenuMode!, entity: currentEntity)
+                if let entity = currentEntity as? LearningEntity
+                {
+                    SpeechEngine.defaultEngine().speak(message:entity.name)
+                }
+                else if let entity = currentEntity as? ColorPalette
+                {
+                    SpeechEngine.defaultEngine().speak(message:entity.name)
+                }
+                
             }
-            else if let entity = currentEntity as? ColorPalette
-            {
-                SpeechEngine.defaultEngine().speak(message:entity.name)
-            }
-            
         }
-        self.menuController?.collapseMenu()
+        self.menuController?.collapseMenu(shouldOnlyReload: !collapseMenu)
     }
 }
 

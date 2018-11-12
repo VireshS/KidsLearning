@@ -25,11 +25,22 @@
 		AE4B3E6F216CA207002D5B44 /* SettingsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4B3E6D216CA207002D5B44 /* SettingsViewCell.xib */; };
 		AE4B3E74216CB3B3002D5B44 /* CustomHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4B3E71216CB3B3002D5B44 /* CustomHeaderFooterView.m */; };
 		AE4B3E75216CB3B3002D5B44 /* CustomHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4B3E72216CB3B3002D5B44 /* CustomHeaderFooterView.xib */; };
+		AE4C65782199980C0045919F /* Speak.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4C65772199980C0045919F /* Speak.png */; };
+		AE4C657C219999360045919F /* Cauliflower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C6579219999350045919F /* Cauliflower.jpg */; };
+		AE4C657D219999360045919F /* Okra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C657A219999350045919F /* Okra.jpg */; };
+		AE4C657E219999360045919F /* Green_Peas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C657B219999360045919F /* Green_Peas.jpg */; };
+		AE4C6582219999840045919F /* Custard_Apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C657F219999830045919F /* Custard_Apple.jpg */; };
+		AE4C6583219999840045919F /* Apricot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C6580219999840045919F /* Apricot.jpg */; };
+		AE4C6584219999840045919F /* Coconut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C6581219999840045919F /* Coconut.jpg */; };
+		AE4C6587219999B10045919F /* Roti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C6585219999B10045919F /* Roti.jpg */; };
+		AE4C6588219999B10045919F /* Swimming.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C6586219999B10045919F /* Swimming.jpg */; };
+		AE4C658C2199F0030045919F /* Broccoli.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C65892199F0030045919F /* Broccoli.jpg */; };
+		AE4C658D2199F0030045919F /* Cabbage-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C658A2199F0030045919F /* Cabbage-2.jpg */; };
+		AE4C658E2199F0030045919F /* Cabbage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE4C658B2199F0030045919F /* Cabbage.jpg */; };
 		AE51BED521648E4400888662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51BED421648E4400888662 /* AppDelegate.swift */; };
 		AE51BEDA21648E4400888662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE51BED821648E4400888662 /* Main.storyboard */; };
 		AE51BEDC21648E4400888662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE51BEDB21648E4400888662 /* Assets.xcassets */; };
 		AE51BEDF21648E4400888662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE51BEDD21648E4400888662 /* LaunchScreen.storyboard */; };
-		AE581105219978F500B89D3E /* Speak.png in Resources */ = {isa = PBXBuildFile; fileRef = AE581104219978F400B89D3E /* Speak.png */; };
 		AE58153A216A7CFC00A6660A /* ColorsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE581539216A7CFC00A6660A /* ColorsDirectory.swift */; };
 		AE581545216B3AC200A6660A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58153F216B3AC200A6660A /* ViewController.swift */; };
 		AE581546216B3AC200A6660A /* AppMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE581541216B3AC200A6660A /* AppMenuViewController.swift */; };
@@ -143,7 +154,6 @@
 		AE5816D5216BCE1300A6660A /* Banana-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE581613216BCE1200A6660A /* Banana-1.jpg */; };
 		AE5816D6216BCE1300A6660A /* Banana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE581614216BCE1200A6660A /* Banana.jpg */; };
 		AE5816D7216BCE1300A6660A /* Litchi-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE581615216BCE1200A6660A /* Litchi-1.jpg */; };
-		AE5816D8216BCE1300A6660A /* Banana-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE581616216BCE1200A6660A /* Banana-3.jpg */; };
 		AE5816D9216BCE1300A6660A /* PineApples.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE581617216BCE1200A6660A /* PineApples.jpg */; };
 		AE5816DA216BCE1300A6660A /* Guava.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE581618216BCE1200A6660A /* Guava.jpg */; };
 		AE5816DB216BCE1300A6660A /* Jackfruit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE581619216BCE1200A6660A /* Jackfruit.jpg */; };
@@ -267,13 +277,24 @@
 		AE4B3E71216CB3B3002D5B44 /* CustomHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeaderFooterView.m; sourceTree = "<group>"; };
 		AE4B3E72216CB3B3002D5B44 /* CustomHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHeaderFooterView.xib; sourceTree = "<group>"; };
 		AE4B3E73216CB3B3002D5B44 /* CustomHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeaderFooterView.h; sourceTree = "<group>"; };
+		AE4C65772199980C0045919F /* Speak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Speak.png; sourceTree = "<group>"; };
+		AE4C6579219999350045919F /* Cauliflower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cauliflower.jpg; sourceTree = "<group>"; };
+		AE4C657A219999350045919F /* Okra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Okra.jpg; sourceTree = "<group>"; };
+		AE4C657B219999360045919F /* Green_Peas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Green_Peas.jpg; sourceTree = "<group>"; };
+		AE4C657F219999830045919F /* Custard_Apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Custard_Apple.jpg; sourceTree = "<group>"; };
+		AE4C6580219999840045919F /* Apricot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Apricot.jpg; sourceTree = "<group>"; };
+		AE4C6581219999840045919F /* Coconut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Coconut.jpg; sourceTree = "<group>"; };
+		AE4C6585219999B10045919F /* Roti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Roti.jpg; sourceTree = "<group>"; };
+		AE4C6586219999B10045919F /* Swimming.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Swimming.jpg; sourceTree = "<group>"; };
+		AE4C65892199F0030045919F /* Broccoli.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Broccoli.jpg; sourceTree = "<group>"; };
+		AE4C658A2199F0030045919F /* Cabbage-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Cabbage-2.jpg"; sourceTree = "<group>"; };
+		AE4C658B2199F0030045919F /* Cabbage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cabbage.jpg; sourceTree = "<group>"; };
 		AE51BED121648E4400888662 /* Just Have Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Have Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE51BED421648E4400888662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE51BED921648E4400888662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE51BEDB21648E4400888662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE51BEDE21648E4400888662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE51BEE021648E4400888662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE581104219978F400B89D3E /* Speak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Speak.png; path = ../../../../../../../../../Downloads/Speak.png; sourceTree = "<group>"; };
 		AE581539216A7CFC00A6660A /* ColorsDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsDirectory.swift; sourceTree = "<group>"; };
 		AE58153F216B3AC200A6660A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE581541216B3AC200A6660A /* AppMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMenuViewController.swift; sourceTree = "<group>"; };
@@ -389,7 +410,6 @@
 		AE581613216BCE1200A6660A /* Banana-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Banana-1.jpg"; sourceTree = "<group>"; };
 		AE581614216BCE1200A6660A /* Banana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Banana.jpg; sourceTree = "<group>"; };
 		AE581615216BCE1200A6660A /* Litchi-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Litchi-1.jpg"; sourceTree = "<group>"; };
-		AE581616216BCE1200A6660A /* Banana-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Banana-3.jpg"; sourceTree = "<group>"; };
 		AE581617216BCE1200A6660A /* PineApples.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PineApples.jpg; sourceTree = "<group>"; };
 		AE581618216BCE1200A6660A /* Guava.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Guava.jpg; sourceTree = "<group>"; };
 		AE581619216BCE1200A6660A /* Jackfruit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jackfruit.jpg; sourceTree = "<group>"; };
@@ -508,7 +528,7 @@
 		AE4B3E4D216C7E03002D5B44 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				AE581104219978F400B89D3E /* Speak.png */,
+				AE4C65772199980C0045919F /* Speak.png */,
 				AE4B3E4E216C7E03002D5B44 /* VegsIcon.jpg */,
 				AE4B3E4F216C7E03002D5B44 /* Vehicles.jpg */,
 				AE4B3E50216C7E03002D5B44 /* lock.png */,
@@ -687,6 +707,8 @@
 		AE5815BA216BCE1200A6660A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				AE4C6585219999B10045919F /* Roti.jpg */,
+				AE4C6586219999B10045919F /* Swimming.jpg */,
 				AE5815BB216BCE1200A6660A /* Candles.jpg */,
 				AE5815BC216BCE1200A6660A /* Boat.jpg */,
 				AE5815BD216BCE1200A6660A /* Colors.jpg */,
@@ -756,6 +778,9 @@
 		AE5815F9216BCE1200A6660A /* Fruits */ = {
 			isa = PBXGroup;
 			children = (
+				AE4C6580219999840045919F /* Apricot.jpg */,
+				AE4C6581219999840045919F /* Coconut.jpg */,
+				AE4C657F219999830045919F /* Custard_Apple.jpg */,
 				AE5815FA216BCE1200A6660A /* Papaya.jpg */,
 				AE5815FB216BCE1200A6660A /* Apple_Tree.jpg */,
 				AE5815FC216BCE1200A6660A /* Green_Apple-1.jpg */,
@@ -784,7 +809,6 @@
 				AE581613216BCE1200A6660A /* Banana-1.jpg */,
 				AE581614216BCE1200A6660A /* Banana.jpg */,
 				AE581615216BCE1200A6660A /* Litchi-1.jpg */,
-				AE581616216BCE1200A6660A /* Banana-3.jpg */,
 				AE581617216BCE1200A6660A /* PineApples.jpg */,
 				AE581618216BCE1200A6660A /* Guava.jpg */,
 				AE581619216BCE1200A6660A /* Jackfruit.jpg */,
@@ -869,6 +893,12 @@
 		AE58165E216BCE1300A6660A /* Vegetables */ = {
 			isa = PBXGroup;
 			children = (
+				AE4C65892199F0030045919F /* Broccoli.jpg */,
+				AE4C658A2199F0030045919F /* Cabbage-2.jpg */,
+				AE4C658B2199F0030045919F /* Cabbage.jpg */,
+				AE4C6579219999350045919F /* Cauliflower.jpg */,
+				AE4C657B219999360045919F /* Green_Peas.jpg */,
+				AE4C657A219999350045919F /* Okra.jpg */,
 				AE58165F216BCE1300A6660A /* Mushroom.jpg */,
 				AE581660216BCE1300A6660A /* Carrots-1.jpg */,
 				AE581661216BCE1300A6660A /* Corn.jpg */,
@@ -1005,6 +1035,7 @@
 				AE581695216BCE1300A6660A /* Bulldozer-2.jpg in Resources */,
 				AE58168A216BCE1300A6660A /* Helicopter.jpg in Resources */,
 				AE5816C8216BCE1300A6660A /* Watermelon.jpg in Resources */,
+				AE4C6582219999840045919F /* Custard_Apple.jpg in Resources */,
 				AE5816E5216BCE1300A6660A /* Lion-3.jpg in Resources */,
 				AE5816C9216BCE1300A6660A /* Cherries.jpg in Resources */,
 				AE581696216BCE1300A6660A /* Earth.jpg in Resources */,
@@ -1013,6 +1044,7 @@
 				AE4B3E6F216CA207002D5B44 /* SettingsViewCell.xib in Resources */,
 				AE581721216BCE1300A6660A /* Corn.jpg in Resources */,
 				AE5816E9216BCE1300A6660A /* Elephant.jpg in Resources */,
+				AE4C657C219999360045919F /* Cauliflower.jpg in Resources */,
 				AE58171A216BCE1300A6660A /* Snake.jpg in Resources */,
 				AE581729216BCE1300A6660A /* Garlic.jpg in Resources */,
 				AE58172F216BCE1300A6660A /* Spinach.jpg in Resources */,
@@ -1029,6 +1061,7 @@
 				AE5816E3216BCE1300A6660A /* Rat-1.jpg in Resources */,
 				AE58170F216BCE1300A6660A /* Buffalo.jpg in Resources */,
 				AE5816C7216BCE1300A6660A /* Watermelon-1.jpg in Resources */,
+				AE4C657D219999360045919F /* Okra.jpg in Resources */,
 				AE5816A1216BCE1300A6660A /* Train-2.jpg in Resources */,
 				AE581730216BCE1300A6660A /* Chiili.jpg in Resources */,
 				AE5816F1216BCE1300A6660A /* Cow.jpg in Resources */,
@@ -1065,8 +1098,10 @@
 				AE581691216BCE1300A6660A /* Bulldozer-1.jpg in Resources */,
 				AE581676216BCE1300A6660A /* Sunflower.jpg in Resources */,
 				AE581689216BCE1300A6660A /* Mountain-1.jpg in Resources */,
+				AE4C657E219999360045919F /* Green_Peas.jpg in Resources */,
 				AE581732216BCE1300A6660A /* Vegetables.jpg in Resources */,
 				AE58171E216BCE1300A6660A /* Bird-3.jpg in Resources */,
+				AE4C6583219999840045919F /* Apricot.jpg in Resources */,
 				AE5816A4216BCE1300A6660A /* Bridge-2.jpg in Resources */,
 				AE5816A0216BCE1300A6660A /* Mountain.jpg in Resources */,
 				AE5816BE216BCE1300A6660A /* Green_Apple-1.jpg in Resources */,
@@ -1085,6 +1120,7 @@
 				AE581713216BCE1300A6660A /* Peacock-2.jpg in Resources */,
 				AE4B3E5B216C7E03002D5B44 /* VegsIcon.jpg in Resources */,
 				AE581690216BCE1300A6660A /* White_Car.jpg in Resources */,
+				AE4C6587219999B10045919F /* Roti.jpg in Resources */,
 				AE5816F8216BCE1300A6660A /* Buffalo-1.jpg in Resources */,
 				AE5816AD216BCE1300A6660A /* Farmer.jpg in Resources */,
 				AE5816A7216BCE1300A6660A /* Fighter_Plane-1.jpg in Resources */,
@@ -1113,6 +1149,7 @@
 				AE5816C4216BCE1300A6660A /* Fruit_Shop.jpg in Resources */,
 				AE581681216BCE1300A6660A /* Temple.jpg in Resources */,
 				AE5816A8216BCE1300A6660A /* Car.jpg in Resources */,
+				AE4C658C2199F0030045919F /* Broccoli.jpg in Resources */,
 				AE581705216BCE1300A6660A /* Monkeys.jpg in Resources */,
 				AE58159C216BC62800A6660A /* Objects.json in Resources */,
 				AE5816D5216BCE1300A6660A /* Banana-1.jpg in Resources */,
@@ -1138,14 +1175,16 @@
 				AE5816FF216BCE1300A6660A /* Monkey-1.jpg in Resources */,
 				AE58168E216BCE1300A6660A /* Forest.jpg in Resources */,
 				AE4B3E75216CB3B3002D5B44 /* CustomHeaderFooterView.xib in Resources */,
+				AE4C6588219999B10045919F /* Swimming.jpg in Resources */,
 				AE5816F3216BCE1300A6660A /* Deer-1.jpg in Resources */,
 				AE51BEDC21648E4400888662 /* Assets.xcassets in Resources */,
 				AE5816C5216BCE1300A6660A /* Orange-1.jpg in Resources */,
 				AE5816DE216BCE1300A6660A /* Duck.jpg in Resources */,
 				AE581708216BCE1300A6660A /* Horse-1.jpg in Resources */,
 				AE5816D9216BCE1300A6660A /* PineApples.jpg in Resources */,
-				AE581105219978F500B89D3E /* Speak.png in Resources */,
+				AE4C65782199980C0045919F /* Speak.png in Resources */,
 				AE51BEDA21648E4400888662 /* Main.storyboard in Resources */,
+				AE4C658D2199F0030045919F /* Cabbage-2.jpg in Resources */,
 				AE5816B5216BCE1300A6660A /* Pencils.jpg in Resources */,
 				AE5816E6216BCE1300A6660A /* Rhino.jpg in Resources */,
 				AE5816F5216BCE1300A6660A /* chimpanzee.jpg in Resources */,
@@ -1169,7 +1208,6 @@
 				AE5816C1216BCE1300A6660A /* Avacado.jpg in Resources */,
 				AE5816E0216BCE1300A6660A /* Lion-1.jpg in Resources */,
 				AE5816D2216BCE1300A6660A /* Strawberries.jpg in Resources */,
-				AE5816D8216BCE1300A6660A /* Banana-3.jpg in Resources */,
 				AE581711216BCE1300A6660A /* Peacock-3.jpg in Resources */,
 				AE581682216BCE1300A6660A /* Train.jpg in Resources */,
 				AE5816DA216BCE1300A6660A /* Guava.jpg in Resources */,
@@ -1185,6 +1223,7 @@
 				AE581710216BCE1300A6660A /* Elebhant_Baby.jpg in Resources */,
 				AE581719216BCE1300A6660A /* Bird-2.jpg in Resources */,
 				AE581599216BC62800A6660A /* Flowers.json in Resources */,
+				AE4C658E2199F0030045919F /* Cabbage.jpg in Resources */,
 				AE5816B2216BCE1300A6660A /* Cloud_and_Car.jpg in Resources */,
 				AE5816ED216BCE1300A6660A /* Tiger.jpg in Resources */,
 				AE581692216BCE1300A6660A /* Fighter_Plane.jpg in Resources */,
@@ -1207,6 +1246,7 @@
 				AE5816B7216BCE1300A6660A /* Cupcake.jpg in Resources */,
 				AE5816EE216BCE1300A6660A /* Sheep.jpg in Resources */,
 				AE5816F9216BCE1300A6660A /* Elephant-2.jpg in Resources */,
+				AE4C6584219999840045919F /* Coconut.jpg in Resources */,
 				AE5816A3216BCE1300A6660A /* Laptop.jpg in Resources */,
 				AE5816AF216BCE1300A6660A /* Sun.jpg in Resources */,
 				AE5816EC216BCE1300A6660A /* Zebra.jpg in Resources */,
@@ -1393,7 +1433,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QF3Y3JH9KE;
 				INFOPLIST_FILE = "Just Have Fun/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1418,7 +1458,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QF3Y3JH9KE;
 				INFOPLIST_FILE = "Just Have Fun/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

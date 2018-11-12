@@ -40,7 +40,9 @@ class DataLoader
                 {
                     if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
                     {
-                        return entityObject
+                        self.allFruits = entityObject
+                        self.allFruits.shuffle()
+                        return self.allFruits
                     }
                 }
             } catch {
@@ -63,6 +65,7 @@ class DataLoader
                     if let entityObject = try? JSONDecoder().decode([ColorPalette].self, from: jsonData)
                     {
                         self.allColors = entityObject
+                        self.allColors.shuffle()
                         return entityObject
                     }
                 }
@@ -86,6 +89,7 @@ class DataLoader
                     if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
                     {
                         self.allVegetables = entityObject
+                        self.allVegetables.shuffle()
                         return entityObject
                     }
                 }
@@ -109,6 +113,7 @@ class DataLoader
                     if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
                     {
                         self.allAnimals = entityObject
+                        self.allAnimals.shuffle()
                         return entityObject
                     }
                 }
@@ -133,6 +138,7 @@ class DataLoader
                     if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
                     {
                         self.allFlowers = entityObject
+                        self.allFlowers.shuffle()
                         return entityObject
                     }
                 }
@@ -157,6 +163,7 @@ class DataLoader
                     if let entityObject = try? JSONDecoder().decode([LearningEntity].self, from: jsonData)
                     {
                         self.allObjects = entityObject
+                        self.allObjects.shuffle()
                         return entityObject
                     }
                 }

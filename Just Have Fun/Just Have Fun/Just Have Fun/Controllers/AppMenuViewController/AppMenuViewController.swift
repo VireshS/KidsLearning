@@ -78,8 +78,13 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     
-    final func openMenu()
+    final func openMenu(shouldOnlyReload onlyReload:Bool = false)
     {
+        if(onlyReload)
+        {
+            self.collectionView.reloadData()
+            return
+        }
         if(self.isMenuOpen != true)
         {
             self.isMenuOpen = true
@@ -91,8 +96,13 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.collectionView.reloadData()
     }
     
-    final func collapseMenu()
+    final func collapseMenu(shouldOnlyReload onlyReload:Bool = false)
     {
+        if(onlyReload)
+        {
+            self.collectionView.reloadData()
+            return
+        }
         if(self.isMenuOpen != false)
         {
             self.isMenuOpen = false
