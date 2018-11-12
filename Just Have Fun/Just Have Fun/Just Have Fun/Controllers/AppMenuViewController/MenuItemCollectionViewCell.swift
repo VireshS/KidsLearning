@@ -63,7 +63,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.prepare()
-        self.contentView.addShadow(with: UIColor.black)
+        self.contentView.addShadow(with: UIColor.black, withSpread: 2)
     }
     
     func prepare()  {

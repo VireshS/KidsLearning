@@ -13,8 +13,7 @@ enum SettingsType {
     case SoundFeedback
     case HaptikFeedback
     case SpeakTheObjects
-    case UseNextPreviousButtons
-    case UseTaps
+    case UseSlideShow
     
     func displayText()->String
     {
@@ -34,13 +33,9 @@ enum SettingsType {
         {
             return "Speak the Objects"
         }
-        else if(self == .UseNextPreviousButtons)
+        else if(self == .UseSlideShow)
         {
-            return "Use Next and Previous Buttons"
-        }
-        else if(self == .UseTaps)
-        {
-            return "Use Tap"
+            return "Auto Slide Show"
         }
         return ""
     }
@@ -48,6 +43,7 @@ enum SettingsType {
 
 class SettingsViewController: UIViewController
 {
+    var delegate:SettingsChangedProtocol? = nil
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,20 +65,24 @@ class SettingsViewController: UIViewController
 extension SettingsViewController:UITableViewDelegate, UITableViewDataSource,SettingsChangedProtocol
 {
     func onSettingsChanged() {
-        //SpeechEngine.defaultEngine().register(settings: newSettings)
+        if let del = self.delegate
+        {
+            del.onSettingsChanged()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 3 : 2
+        return section == 0 ? 3 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsViewCell", for: indexPath) as? SettingsViewCell
         {
+            cell.delegate = self
             if(indexPath.section == 0)
             {
                 if(indexPath.row == 0)
@@ -106,11 +106,7 @@ extension SettingsViewController:UITableViewDelegate, UITableViewDataSource,Sett
             {
                 if(indexPath.row == 0)
                 {
-                    cell.currentSettingMode = .UseNextPreviousButtons
-                }
-                else if(indexPath.row == 1)
-                {
-                    cell.currentSettingMode = .UseTaps
+                   cell.currentSettingMode = .UseSlideShow
                 }
             }
             return cell

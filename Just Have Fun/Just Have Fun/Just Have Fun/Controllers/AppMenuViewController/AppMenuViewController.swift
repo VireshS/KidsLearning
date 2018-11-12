@@ -9,9 +9,11 @@
 import UIKit
 protocol MenuChangedProtocol {
     func didChanged(menu tomode:AppMenuItems)
+    func onSpeakAgain()
 }
 
 class AppMenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    @IBOutlet weak var speakAgainView: UIView!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     var isMenuOpen = false
@@ -49,6 +51,9 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.mainImage.layer.borderWidth = 3
         self.mainImage.clipsToBounds = true
         self.mainImage.isHidden = true
+        self.speakAgainView.clipsToBounds = true
+        self.speakAgainView.layer.cornerRadius = self.speakAgainView.frame.size.width/2
+        self.speakAgainView.addShadow(with: UIColor.black)
         if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         {
             layout.scrollDirection = .horizontal
@@ -79,6 +84,10 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
         {
             self.isMenuOpen = true
         }
+        UIView.animate(withDuration: 0.2) {
+            self.speakAgainView.alpha = 0
+            self.speakAgainView.frame = CGRect(x: self.view.frame.size.width, y: (self.view.frame.size.height-100)/2, width: 100, height: 100)
+        }
         self.collectionView.reloadData()
     }
     
@@ -87,6 +96,10 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
         if(self.isMenuOpen != false)
         {
             self.isMenuOpen = false
+        }
+        UIView.animate(withDuration: 0.2) {
+            self.speakAgainView.alpha = 1
+            self.speakAgainView.frame = CGRect(x: self.view.frame.size.width-100-20, y: (self.view.frame.size.height-100)/2, width: 100, height: 100)
         }
         self.collectionView.reloadData()
     }
@@ -178,4 +191,13 @@ class AppMenuViewController: UIViewController, UICollectionViewDelegate, UIColle
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 40
     }
+    
+    
+    @IBAction func onSpeak(_ sender: Any) {
+        if let weakDeleagte = self.delegate
+        {
+            weakDeleagte.onSpeakAgain()
+        }
+    }
+    
 }

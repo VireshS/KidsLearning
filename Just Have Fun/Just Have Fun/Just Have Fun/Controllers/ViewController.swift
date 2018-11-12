@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
   
      @IBOutlet weak var containerView: UIView!
-
+    private var slideShowTimer:Timer? = nil
     private let appMenuItems = AppMenuItems.allMenus()
     private var menuController:AppMenuViewController? = nil
     
@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         self.styleButtons()
         self.loadMenu()
         self.addBrowser(for: self.currentMenuMode!)
+        self.onSettingsChanged()
     }
     
     private func browser(for mode:AppMenuItems)->LearningEntityBrowserViewController?
@@ -197,20 +198,68 @@ class ViewController: UIViewController {
 //        return 0
 //    }
 //}
+
+extension ViewController:SettingsChangedProtocol
+{
+    func onSettingsChanged() {
+        if(AppSettings.shared().shouldSlideShow)
+        {
+            print("Switching to Auto Slide Show Mode...")
+            if(self.slideShowTimer == nil)
+            {
+                self.slideShowTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onSlideShowTimerFired), userInfo: nil, repeats: true)
+            }
+        }
+        else
+        {
+             print("Turning Off the Auto Slide Show Mode...")
+            self.slideShowTimer?.invalidate()
+            self.slideShowTimer = nil
+        }
+    }
+    
+    @objc func onSlideShowTimerFired()
+    {
+        self.onNext(self.nextView)
+    }
+}
 extension ViewController:MenuChangedProtocol
 {
+    func onSpeakAgain() {
+        if let currentEntity = self.currentBrowser()?.currentEntity
+        {
+            var textToSpeakAgain = ""
+            if let imageEntity = currentEntity as? LearningEntity
+            {
+                textToSpeakAgain = imageEntity.name
+            }
+            else if let colorEntity = currentEntity as? ColorPalette
+            {
+                textToSpeakAgain = colorEntity.name
+            }
+            if(textToSpeakAgain.count>0)
+            {
+                SpeechEngine.defaultEngine().speak(message:textToSpeakAgain)
+            }
+        }
+    }
+    
     func didChanged(menu tomode: AppMenuItems) {
         if(tomode == .Settings)
         {
-            let popoverContent = self.storyboard?.instantiateViewController(withIdentifier:"SettingsViewController")
-            popoverContent!.modalPresentationStyle = UIModalPresentationStyle.formSheet
-            let popover = popoverContent!.popoverPresentationController
-            popoverContent!.preferredContentSize = CGSize(width: self.view.bounds.size.width-300, height: self.view.bounds.size.height-200)
-            
-            
-            self.present(popoverContent!, animated: true) {
+            if let popoverContent = self.storyboard?.instantiateViewController(withIdentifier:"SettingsViewController") as? SettingsViewController
+            {
+                popoverContent.delegate = self
+                popoverContent.modalPresentationStyle = UIModalPresentationStyle.formSheet
+                let popover = popoverContent.popoverPresentationController
+                popoverContent.preferredContentSize = CGSize(width: self.view.bounds.size.width-300, height: self.view.bounds.size.height-200)
                 
+                
+                self.present(popoverContent, animated: true) {
+                    
+                }
             }
+            
             return
         }
         self.addBrowser(for: tomode)

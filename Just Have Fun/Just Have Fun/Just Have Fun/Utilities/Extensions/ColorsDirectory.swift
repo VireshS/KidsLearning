@@ -4,12 +4,12 @@ import UIKit
 
 @objc extension UIView
 {
-    func addShadow(with color:UIColor)
+    func addShadow(with color:UIColor, withSpread spread:CGFloat = 4)
     {
         self.layer.masksToBounds = false
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 4, height: 4)
+        self.layer.shadowOffset = CGSize(width: spread, height: spread)
         self.layer.shadowRadius = 1
         
         //self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath

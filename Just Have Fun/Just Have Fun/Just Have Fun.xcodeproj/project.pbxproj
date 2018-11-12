@@ -29,6 +29,7 @@
 		AE51BEDA21648E4400888662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE51BED821648E4400888662 /* Main.storyboard */; };
 		AE51BEDC21648E4400888662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE51BEDB21648E4400888662 /* Assets.xcassets */; };
 		AE51BEDF21648E4400888662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE51BEDD21648E4400888662 /* LaunchScreen.storyboard */; };
+		AE581105219978F500B89D3E /* Speak.png in Resources */ = {isa = PBXBuildFile; fileRef = AE581104219978F400B89D3E /* Speak.png */; };
 		AE58153A216A7CFC00A6660A /* ColorsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE581539216A7CFC00A6660A /* ColorsDirectory.swift */; };
 		AE581545216B3AC200A6660A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58153F216B3AC200A6660A /* ViewController.swift */; };
 		AE581546216B3AC200A6660A /* AppMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE581541216B3AC200A6660A /* AppMenuViewController.swift */; };
@@ -272,6 +273,7 @@
 		AE51BEDB21648E4400888662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE51BEDE21648E4400888662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE51BEE021648E4400888662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE581104219978F400B89D3E /* Speak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Speak.png; path = ../../../../../../../../../Downloads/Speak.png; sourceTree = "<group>"; };
 		AE581539216A7CFC00A6660A /* ColorsDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsDirectory.swift; sourceTree = "<group>"; };
 		AE58153F216B3AC200A6660A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE581541216B3AC200A6660A /* AppMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMenuViewController.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 		AE4B3E4D216C7E03002D5B44 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AE581104219978F400B89D3E /* Speak.png */,
 				AE4B3E4E216C7E03002D5B44 /* VegsIcon.jpg */,
 				AE4B3E4F216C7E03002D5B44 /* Vehicles.jpg */,
 				AE4B3E50216C7E03002D5B44 /* lock.png */,
@@ -1141,6 +1144,7 @@
 				AE5816DE216BCE1300A6660A /* Duck.jpg in Resources */,
 				AE581708216BCE1300A6660A /* Horse-1.jpg in Resources */,
 				AE5816D9216BCE1300A6660A /* PineApples.jpg in Resources */,
+				AE581105219978F500B89D3E /* Speak.png in Resources */,
 				AE51BEDA21648E4400888662 /* Main.storyboard in Resources */,
 				AE5816B5216BCE1300A6660A /* Pencils.jpg in Resources */,
 				AE5816E6216BCE1300A6660A /* Rhino.jpg in Resources */,

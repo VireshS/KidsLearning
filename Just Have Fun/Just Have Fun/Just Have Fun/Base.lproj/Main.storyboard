@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfI-Dr-e8x" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777.51798561151077" y="31.654676258992808"/>
+            <point key="canvasLocation" x="1803" y="1247"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="KLj-Ie-nmr">
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVK-r9-Ihy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="578" y="971"/>
+            <point key="canvasLocation" x="440" y="1657"/>
         </scene>
         <!--Colors Browser View Controller-->
         <scene sceneID="dKC-BP-Vbk">
@@ -199,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8s-0b-yWE" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="-211"/>
+            <point key="canvasLocation" x="2087" y="-332"/>
         </scene>
         <!--App Menu View Controller-->
         <scene sceneID="Sr8-Eb-zuY">
@@ -266,12 +266,32 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IN-O0-Eiv">
+                                <rect key="frame" x="982" y="25" width="100" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLJ-ih-eDq">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Speak.png" backgroundImage="Speak.png"/>
+                                        <connections>
+                                            <action selector="onSpeak:" destination="Xr3-FB-ZxY" eventType="touchUpInside" id="rVE-pZ-SjT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Fai-9n-Zhf"/>
+                                    <constraint firstAttribute="height" constant="100" id="plP-Sz-Jvg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QGq-79-WyT" firstAttribute="trailing" secondItem="McO-Wu-fg8" secondAttribute="trailing" id="2WM-gD-rZV"/>
                             <constraint firstItem="QGq-79-WyT" firstAttribute="bottom" secondItem="BHF-QF-xbU" secondAttribute="bottom" constant="10" id="2o9-qI-9mR"/>
                             <constraint firstItem="QGq-79-WyT" firstAttribute="bottom" secondItem="McO-Wu-fg8" secondAttribute="bottom" constant="10" id="6WX-gY-zRi"/>
+                            <constraint firstItem="QGq-79-WyT" firstAttribute="trailing" secondItem="2IN-O0-Eiv" secondAttribute="trailing" constant="30" id="FHJ-On-HZ5"/>
+                            <constraint firstItem="QGq-79-WyT" firstAttribute="bottom" secondItem="2IN-O0-Eiv" secondAttribute="bottom" constant="25" id="J0z-8b-XHe"/>
                             <constraint firstItem="McO-Wu-fg8" firstAttribute="leading" secondItem="QGq-79-WyT" secondAttribute="leading" id="QYk-Xa-eed"/>
                             <constraint firstItem="BHF-QF-xbU" firstAttribute="leading" secondItem="QGq-79-WyT" secondAttribute="leading" constant="20" id="wlt-ei-fX9"/>
                         </constraints>
@@ -284,6 +304,7 @@
                     <connections>
                         <outlet property="collectionView" destination="McO-Wu-fg8" id="KkG-Yc-qAD"/>
                         <outlet property="mainImage" destination="BHF-QF-xbU" id="oHY-UR-CDP"/>
+                        <outlet property="speakAgainView" destination="2IN-O0-Eiv" id="c7P-yO-ZN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsa-nX-eKd" sceneMemberID="firstResponder"/>
@@ -294,6 +315,7 @@
     <resources>
         <image name="Next.png" width="2400" height="2400"/>
         <image name="Previous.png" width="2400" height="2400"/>
+        <image name="Speak.png" width="256" height="256"/>
         <image name="header.jpg" width="2305" height="1537"/>
     </resources>
 </document>

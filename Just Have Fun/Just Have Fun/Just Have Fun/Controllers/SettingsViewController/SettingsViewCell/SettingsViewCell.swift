@@ -40,29 +40,10 @@ class SettingsViewCell: UITableViewCell {
                 self.settingsSwitch.isHidden = false
                 self.settingsSwitch.setOn(AppSettings.shared().shouldSpeakObjects == true, animated: true)
             }
-            else if(self.currentSettingMode == .UseNextPreviousButtons)
+            else if(self.currentSettingMode == .UseSlideShow)
             {
-                self.settingsSwitch.isHidden = true
-                if(AppSettings.shared().shouldUseTaps == false)
-                {
-                    self.accessoryType = .checkmark
-                }
-                else
-                {
-                    self.accessoryType = .none
-                }
-            }
-            else if(self.currentSettingMode == .UseTaps)
-            {
-                self.settingsSwitch.isHidden = true
-                if(AppSettings.shared().shouldUseTaps == true)
-                {
-                    self.accessoryType = .checkmark
-                }
-                else
-                {
-                    self.accessoryType = .none
-                }
+                self.settingsSwitch.isHidden = false
+                self.settingsSwitch.setOn(AppSettings.shared().shouldSlideShow == true, animated: true)
             }
             else
             {
@@ -91,9 +72,9 @@ class SettingsViewCell: UITableViewCell {
         {
            AppSettings.shared().shouldSpeakObjects = self.settingsSwitch.isOn
         }
-        else if(self.currentSettingMode == .UseNextPreviousButtons || self.currentSettingMode == .UseTaps)
+        else if(self.currentSettingMode == .UseSlideShow)
         {
-            AppSettings.shared().shouldUseTaps = (self.accessoryType == .checkmark)
+            AppSettings.shared().shouldSlideShow = self.settingsSwitch.isOn
         }
         if let del = self.delegate
         {

@@ -40,13 +40,16 @@ class AppSettings:NSObject
             UserDefaults.standard.synchronize()
         }
     }
-    var shouldUseTaps = false
+    
+    var shouldSlideShow = true
     {
         didSet{
-            UserDefaults.standard.set(shouldUseTaps, forKey: "shouldUseTaps")
+            UserDefaults.standard.set(shouldSlideShow, forKey: "shouldSlideShow")
             UserDefaults.standard.synchronize()
         }
     }
+    
+    
     let speakingSettings = SpeakingSettings()
     private static var settings:AppSettings? = nil
     class func shared() -> AppSettings
@@ -65,7 +68,7 @@ class AppSettings:NSObject
         newSettings.shouldProvideSoundFeedback = self.shouldProvideSoundFeedback
         newSettings.shouldProvideHaptikFeedback = self.shouldProvideHaptikFeedback
         newSettings.shouldSpeakObjects = self.shouldSpeakObjects
-        newSettings.shouldUseTaps = self.shouldUseTaps
+        newSettings.shouldSlideShow = self.shouldSlideShow
         newSettings.speakingSettings.rate = self.speakingSettings.rate
         newSettings.speakingSettings.volume = self.speakingSettings.volume
         newSettings.speakingSettings.pitchMultiplier = self.speakingSettings.pitchMultiplier
@@ -74,11 +77,11 @@ class AppSettings:NSObject
     
     private func updateDefaultSettings()
     {
-        self.shouldUseDynamicMenuIcons = UserDefaults.standard.bool(forKey: "UserDefaults.standard.bool(forKey: shouldUseDynamicMenuIcons)")
+        self.shouldUseDynamicMenuIcons = UserDefaults.standard.bool(forKey: "shouldUseDynamicMenuIcons")
         self.shouldProvideSoundFeedback = UserDefaults.standard.bool(forKey: "shouldProvideSoundFeedback")
         self.shouldProvideHaptikFeedback = UserDefaults.standard.bool(forKey: "shouldProvideHaptikFeedback")
         self.shouldSpeakObjects = UserDefaults.standard.bool(forKey: "shouldSpeakObjects")
-        self.shouldUseTaps = UserDefaults.standard.bool(forKey: "shouldUseTaps")
+        self.shouldSlideShow = UserDefaults.standard.bool(forKey: "shouldSlideShow")
         self.speakingSettings.rate = 0.3
         self.speakingSettings.volume = 0.75
         self.speakingSettings.pitchMultiplier = 0.75
